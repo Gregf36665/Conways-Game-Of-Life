@@ -111,7 +111,7 @@ module Column_test;
 		n = 1;
 		e_col = 4'b0001;
 		w_col = 4'b0001;
-		#20;
+		#10;
 		expected_alive = 4'b1;
 		if(expected_alive != alive_col) begin
          $display("Error with bringing cell to life!");        
@@ -120,13 +120,18 @@ module Column_test;
 		// this will enable the cell beneath it to come to life
 	   // which will overcrowd the first cell killing it
 		// this is now stable
-		#20;
+		#10;
 		expected_alive = 4'b11;
 		if(expected_alive != alive_col) begin
          $display("Error with logically creating a cell!");        
          $stop;
       end
-		#20;
+		#50;
+		expected_alive = 4'b10;
+		if(expected_alive != alive_col) begin
+         $display("Error with keeping a column alive!");        
+         $stop;
+      end
 		
 		// disable col
 		enable = 0;
@@ -149,24 +154,58 @@ module Column_test;
 		write_enb = 0;
 		#10;
 		
+		expected_alive = 4'b1111;
+		if(expected_alive != alive_col) begin
+         $display("Error with write creating a cell!");        
+         $stop;
+      end
 		// watch the column die
 		enable = 1;
 		
 		#50;
-		
+		expected_alive = 4'b0;
+		if(expected_alive != alive_col) begin
+         $display("Error with death column survived!");        
+         $stop;
+      end
 		// test the scan
 		enable = 0;
 		scan_val = 4'b0001;
 		scan = 1;
 		#10;
+		expected_alive = 4'b0001;
+		if(expected_alive != alive_col) begin
+         $display("Error with scan!");        
+         $stop;
+      end
 		scan_val = 4'b1000;
 		#10;
+		expected_alive = 4'b1000;
+		if(expected_alive != alive_col) begin
+         $display("Error with scan!");        
+         $stop;
+      end
 		scan_val = 4'b0110;
 		#10;
+		expected_alive = 4'b0110;
+		if(expected_alive != alive_col) begin
+         $display("Error with scan!");        
+         $stop;
+      end
 		scan_val = 4'b1111;
 		#10;
+		expected_alive = 4'b1111;
+		if(expected_alive != alive_col) begin
+         $display("Error with scan!");        
+         $stop;
+      end
 		scan = 0;
 		#50;
+		expected_alive = 4'b1111;
+		if(expected_alive != alive_col) begin
+         $display("Error with scan!");        
+         $stop;
+      end
 		$stop;
 		
 

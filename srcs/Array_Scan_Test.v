@@ -76,7 +76,7 @@ module Array_Scan_Test;
 		write_enb = 0;
 		scan = 0;
 		run = 0;
-
+		expected_alive = 4'h1;
 		// Wait 11 ns for global reset to finish
 		#11;
 		reset = 0;
@@ -94,6 +94,78 @@ module Array_Scan_Test;
 		scan = 1;
 		
 		#160;
+		
+		scan = 0;
+		
+		if(expected_alive != alive) begin
+			$display("Scan broke single cell");
+			$stop;
+		end
+		
+		// configure for 'Toad', should be period 2
+      /* 
+      ooXo     oooo
+		XooX <-> oXXX
+		XooX     XXXo
+		oXoo     oooo
+      */
+      run = 0;
+      
+      // reset the array
+      reset = 1;
+      row = 1;
+      col = 0;
+      
+      #10;
+      reset = 0;
+      write_enb = 1;
+      
+      #10;
+		row = 2;
+		
+		#10;
+		col = 1;
+		row = 3;
+		
+		#10;
+		col = 2;
+		row = 0;
+		
+		#10;
+		col = 3;
+		row = 1;
+		
+		#10;
+		row = 2;
+      
+      #10;
+
+      write_enb = 0;
+      expected_alive = 16'h6186;
+		
+		#20;
+      if(expected_alive != alive) begin
+         $display("Error with toad formation"); 
+         display_life(alive);
+         $stop;
+      end
+      
+      // let them start
+      run = 1;
+      #10;
+      expected_alive = 16'h2664;
+		
+		scan = 1;
+		#160;
+		scan = 0;
+		
+		if(expected_alive != alive) #10; // out by one period
+		if(expected_alive != alive) begin
+         $display("Error with toad formation"); 
+         display_life(alive);
+         $stop;
+      end
+		
 		$stop;
 		
 

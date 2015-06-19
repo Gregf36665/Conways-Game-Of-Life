@@ -47,9 +47,12 @@ module Array_Scan_Test;
 	reg write_enb;
 	reg scan;
 	reg run;
+	reg scan_write_val;
+   reg scan_write_enb = 0;	
 
 	// Outputs
 	wire [15:0] alive;
+	wire scan_read_val;
 
 	// Instantiate the Unit Under Test (UUT)
 	life_array_4x4 uut (
@@ -60,7 +63,10 @@ module Array_Scan_Test;
 		.col(col), 
 		.val(val), 
 		.write_enb(write_enb), 
-		.scan(scan), 
+		.scan(scan),
+		.scan_write_val(scan_write_val),
+		.scan_write_enb(scan_write_enb),
+		.scan_read_val(scan_read_val),
 		.run(run)
 	);
 
@@ -165,6 +171,37 @@ module Array_Scan_Test;
          display_life(alive);
          $stop;
       end
+		
+		
+		run = 0;
+		reset = 1;
+		#10;
+		reset = 0;
+		
+		// Start the scan
+		scan_write_enb = 1;
+		scan = 1;
+		scan_write_val = 0;
+		#40;
+		scan_write_val = 1;
+		#20;
+		scan_write_val = 0;
+		#20;
+		scan_write_val = 1;
+		#20;
+		scan_write_val = 0;
+		#60;
+		scan_write_enb = 0;
+		scan = 0;
+		#10;
+		
+		expected_alive = 16'h6600;
+		if(expected_alive != alive) begin
+         $display("Error scan creation"); 
+         display_life(alive);
+         $stop;
+      end
+		
 		
 		$stop;
 		

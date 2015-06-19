@@ -23,9 +23,9 @@ module life_array_4x4(input clk,
 		      input val,
 		      input write_enb,
 				input scan,
-				//input scan_val,
-				//input scan_write,
-				//output scan_val,
+				input scan_write_val,
+				input scan_write_enb,
+				output scan_read_val,
 		      input run // set this high to start running the tiles
 
 		      );
@@ -41,8 +41,12 @@ module life_array_4x4(input clk,
     assign write_1 = write_enb & (col == 2'd1);
     assign write_2 = write_enb & (col == 2'd2);
     assign write_3 = write_enb & (col == 2'd3);
+	 
+	 assign scan_col_topLeft = scan_write_enb ? scan_write_val : alive_col3[3];
+	 
+	 assign scan_read_val = scan_col3[3];	 
    
-	 assign scan_col0 = {alive_col3[2:0],alive_col3[3]};
+	 assign scan_col0 = {alive_col3[2:0],scan_col_topLeft};
 	 assign scan_col1 = alive_col0;
 	 assign scan_col2 = alive_col1;
 	 assign scan_col3 = alive_col2;

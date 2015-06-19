@@ -44,7 +44,7 @@ module life_array_4x4(input clk,
 	 
 	 assign scan_col_topLeft = scan_write_enb ? scan_write_val : alive_col3[3];
 	 
-	 assign scan_read_val = scan_col3[3];	 
+	 assign scan_read_val = alive_col3[3];	 
    
 	 assign scan_col0 = {alive_col3[2:0],scan_col_topLeft};
 	 assign scan_col1 = alive_col0;

@@ -42,6 +42,7 @@ module Conway_Sim;
     reg val;
     reg write_enb;
     reg enb = 0;
+	 reg scan = 0;
     reg [15:0] expected_alive;
     
     always #5 clk = ~clk;
@@ -54,7 +55,8 @@ module Conway_Sim;
                         .col(col),
                         .val(val),
                         .write_enb(write_enb),
-                        .run(enb)
+                        .run(enb),
+								.scan(scan)
                         );
    
     initial

@@ -18,6 +18,7 @@
 // 
 // Revision:
 // Revision 0.01 - File Created
+// Revision 0.02 - Added in scan test
 // Additional Comments:
 // 
 ////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +40,10 @@ module Column_test;
 	reg val;
 	reg [1:0] row;
 	reg enable;
+	reg[3:0] scan_val;
+	reg scan;
+	
+	reg [3:0] expected_alive;
 
 	// Outputs
 	wire [3:0] alive_col;
@@ -59,7 +64,9 @@ module Column_test;
 		.val(val), 
 		.row(row), 
 		.alive_col(alive_col), 
-		.enable(enable)
+		.enable(enable),
+		.scan(scan),
+		.scan_val(scan_val)
 	);
 
 	always begin
@@ -82,11 +89,19 @@ module Column_test;
 		val = 0;
 		row = 0;
 		enable = 0;
+		scan_val = 0;
+		scan = 0;
 
-		// Wait 10 ns for global reset to finish
-		#10;
+		// Wait 11 ns for global reset to finish
+		#11;
       reset = 0;  
 		// Add stimulus here
+		
+		expected_alive = 4'b0;
+		if(expected_alive != alive_col) begin
+         $display("Error with column reset!");        
+         $stop;
+      end
 		
 		// enable the column
 		enable = 1;
@@ -96,13 +111,24 @@ module Column_test;
 		n = 1;
 		e_col = 4'b0001;
 		w_col = 4'b0001;
-		#10;
+		#20;
+		expected_alive = 4'b1;
+		if(expected_alive != alive_col) begin
+         $display("Error with bringing cell to life!");        
+         $stop;
+      end
 		// this will enable the cell beneath it to come to life
 	   // which will overcrowd the first cell killing it
 		// this is now stable
-		#50;
+		#20;
+		expected_alive = 4'b11;
+		if(expected_alive != alive_col) begin
+         $display("Error with logically creating a cell!");        
+         $stop;
+      end
+		#20;
 		
-		// disable row
+		// disable col
 		enable = 0;
 		#10;
 		// kill all other cells
@@ -128,6 +154,19 @@ module Column_test;
 		
 		#50;
 		
+		// test the scan
+		enable = 0;
+		scan_val = 4'b0001;
+		scan = 1;
+		#10;
+		scan_val = 4'b1000;
+		#10;
+		scan_val = 4'b0110;
+		#10;
+		scan_val = 4'b1111;
+		#10;
+		scan = 0;
+		#50;
 		$stop;
 		
 

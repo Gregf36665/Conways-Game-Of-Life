@@ -18,6 +18,7 @@
 // 
 // Revision:
 // Revision 0.01 - File Created
+// Revision 0.02 - Added in scan test
 // Additional Comments:
 // 
 ////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +39,11 @@ module Cell_test;
 	reg write;
 	reg val;
 	reg enb;
-
+	reg scan;
+	reg scan_val;
+	
+  reg expected_alive;
+	
 	// Outputs
 	wire alive;
 
@@ -57,6 +62,8 @@ module Cell_test;
 		.write(write), 
 		.val(val), 
 		.enb(enb), 
+		.scan(scan),
+		.scan_val(scan_val),
 		.alive(alive)
 	);
 
@@ -79,29 +86,60 @@ module Cell_test;
 		write = 0;
 		val = 0;
 		enb = 0;
+		scan = 0;
+		scan_val = 0;
 
-		// Wait 10 ns for global reset to finish
-		#10;
+		// Wait 11 ns for global reset to finish
+		#11;
         
 		// reset the cell
 		reset = 1;
 		#10;
 		reset = 0;
 		#10;
+		
+		expected_alive = 0;
+		if(expected_alive != alive) begin
+         $display("Error with cell reset!");        
+         $stop;
+      end
+		
 		// activate it
 		enb = 1;
 		#10;
+		expected_alive = 0;
+		if(expected_alive != alive) begin
+         $display("Cell unexpectedly came to life!");      
+         $stop;
+      end
+		
 		// bring it to life
 		n = 1;
 		e = 1;
 		s = 1;
 		#10;
+		expected_alive = 1;
+		if(expected_alive != alive) begin
+         $display("Cell failed to come to life!");        
+         $stop;
+      end
 		// keep it alive
 		s = 0;
 		#10;
+		expected_alive = 1;
+		if(expected_alive != alive) begin
+         $display("Cell failed to stay alive!");        
+         $stop;
+      end
+		
 		// kill it
 		n = 0;
 		#10;
+		expected_alive = 0;
+		if(expected_alive != alive) begin
+         $display("Cell failed to die!");       
+         $stop;
+      end
 		
 		// deactivate it
 		enb = 0;
@@ -112,18 +150,61 @@ module Cell_test;
 		val = 1;
 		# 10;
 		write = 0;
+		expected_alive = 1;
+		if(expected_alive != alive) begin
+         $display("Write to cell failed!");       
+         $stop;
+      end
 		
 		// does it stay alive
 		s = 1;
 		#10;
 		enb = 1;
 		#50;
+		expected_alive = 1;
+		if(expected_alive != alive) begin
+         $display("Cell died when it should be disabled!");         
+         $stop;
+      end
 		
 		// now kill it again
 		s = 0;
+		#10;
+		expected_alive = 0;
+		if(expected_alive != alive) begin
+         $display("Cell failed to die");
+         $stop;
+      end
+		
+		// test scan
+		scan_val = 1;
+		#10;
+		scan = 1;
+		#10;
+		expected_alive = 1;
+		if(expected_alive != alive) begin
+         $display("Scan failed");     
+         $stop;
+      end
+		
+		scan_val = 0;
+		#10
+		expected_alive = 0;
+		if(expected_alive != alive) begin
+         $display("Scan failed");     
+         $stop;
+      end
+		
+		scan = 0;
+		scan_val = 1;
+		
+		#10;
+		expected_alive = 0;
+		if(expected_alive != alive) begin
+         $display("Scan should be disabled");     
+         $stop;
+      end
 		#20;
-		
-		
 		$stop;
 
 	end

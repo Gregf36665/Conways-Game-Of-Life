@@ -48,14 +48,14 @@ module VESADriver(
       Vsyncb <= Vsync;
       
       if (xinternal == HTOTAL-1 && y != VTOTAL-1) begin
-	 xinternal <= 0;
-	 y <= y+1;
+			 xinternal <= 0;
+			 y <= y+1;
       end
       else xinternal<= xinternal+1;
       
       if (xinternal == HTOTAL-1 &&y == VTOTAL-1) begin
-	 y <= 0;
-	 xinternal <= 0;
+			 y <= 0;
+			 xinternal <= 0;
       end
    end
    

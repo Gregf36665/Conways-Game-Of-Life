@@ -44,15 +44,12 @@ module life_cell(input clk,
     always @(posedge clk) begin 
 	   if (scan) begin
 				alive <= scan_val;
-				alive_next = scan_val;
 				end
 		else if (write) begin
 				alive <= val;
-				alive_next = val;
 				end
 		else if (reset) begin
 				alive <= 0;
-				alive_next = 0;
 				end
 			
 		else alive <= alive_next;
@@ -63,8 +60,9 @@ module life_cell(input clk,
 				if (alive)
 					if (neighbor_count < 2 || neighbor_count > 3 ) alive_next = 0;
 					else alive_next = 1;
-					else if (neighbor_count == 3) alive_next = 1;
+				else if (neighbor_count == 3) alive_next = 1;
 		end
+		else alive_next = alive;
 	end
 
 endmodule // life_cell

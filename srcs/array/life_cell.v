@@ -61,6 +61,7 @@ module life_cell(input clk,
 					if (neighbor_count < 2 || neighbor_count > 3 ) alive_next = 0;
 					else alive_next = 1;
 				else if (neighbor_count == 3) alive_next = 1;
+				else alive_next = 0;
 		end
 		else alive_next = alive;
 	end

@@ -159,11 +159,18 @@ module Cell_test;
 		// does it stay alive
 		s = 1;
 		#10;
+		expected_alive = 1;
+		if(expected_alive != alive) begin
+         $display("Cell died when it should be disabled!");         
+         $stop;
+      end
+		
+		// does it stay alive when enabled
 		enb = 1;
 		#50;
 		expected_alive = 1;
 		if(expected_alive != alive) begin
-         $display("Cell died when it should be disabled!");         
+         $display("Cell died when it should be stable!");         
          $stop;
       end
 		
@@ -205,6 +212,7 @@ module Cell_test;
          $stop;
       end
 		#20;
+		$display("Good run");
 		$stop;
 
 	end

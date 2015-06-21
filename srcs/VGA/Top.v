@@ -22,22 +22,25 @@
 
 module Top(
     input clk,
-	 input reset,
+	input reset,
     output Hsync,
     output Vsync,
     output [3:0] red,
     output [3:0] green,
     output [3:0] blue,
-	 input  [1:0] row,
-	 input  [1:0] col,
-	 input        val,
-	 input		  write_enb
+	input  [1:0] row,
+	input  [1:0] col,
+	input  val,
+	input	write_enb,
+	input enb
     );
     
-    wire [10:0] y;
-    wire [10:0] x;
+     wire [10:0] y;
+     wire [10:0] x;
 	 wire [15:0] alive;
-	 wire frame;    
+	 wire frame;
+	 
+	 wire run;    
 	 
 	 wire [3:0] red_1,red_2,red_3,red_4,
 					red_5,red_6,red_7,red_8,
@@ -54,8 +57,7 @@ module Top(
 					blue_9,blue_10,blue_11,blue_12,
 					blue_13,blue_14,blue_15,blue_16;
 					
-	 assign red = red_1 || red_2 || red_3 || red_4 ||
-					  red_5 || red_6 || red_7 || red_8 ||
+	 assign red = red_1 || red_2 || red_3 || red_4 || red_5 || red_6 || red_7 || red_8 ||
 					  red_9 || red_10 || red_11 || red_12 ||
 					  red_13 || red_14 || red_15 || red_16;
 					  
@@ -69,13 +71,16 @@ module Top(
 					   blue_9 || blue_10 || blue_11 || blue_12 ||
 					   blue_13 || blue_14 || blue_15 || blue_16;
 						
-	 assign alive = 16'hf;
-    
+
     VESADriver U_MONITOR(.clk(clk),.Hsyncb(Hsync), .Vsyncb(Vsync), .x(x), .y(y),.frame(frame));
     
-	 life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(/*alive*/), .row(row), .col(col),
+    Timer #(.COUNT_MAX(100000000)) U_TIMER(.clk(clk),.trigger(trigger));
+    
+    assign run = trigger & enb;
+    
+	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive), .row(row), .col(col),
 									.val(val),.write_enb(write_enb),.scan(1'b0),.scan_write_val(1'b0),
-									.scan_write_enb(1'b0), .scan_read_val(), .run(frame));
+									.scan_write_enb(1'b0), .scan_read_val(), .run(run));
 	 
     RecGenerator #(.RVAL(4'hf),.GVAL(4'b0),.BVAL(4'b0),
                    .XPOS(100),.YPOS(100)) 
@@ -92,12 +97,12 @@ module Top(
                  U_REC_GEN_3 (.x(x), .y(y), .enb(alive[2]),
                  .red(red_3), .green(green_3), .blue(blue_3));  
 
-    RecGenerator #(.RVAL(4'h4),.GVAL(4'b0),.BVAL(4'b0),
+    RecGenerator #(.RVAL(4'h4),.GVAL(4'hf),.BVAL(4'b0),
                    .XPOS(400),.YPOS(100)) 
                  U_REC_GEN_4 (.x(x), .y(y), .enb(alive[3]),
                  .red(red_4), .green(green_4), .blue(blue_4));  
 
-    RecGenerator #(.RVAL(4'b1),.GVAL(4'b0),.BVAL(4'b0),
+    RecGenerator #(.RVAL(4'b0),.GVAL(4'hf),.BVAL(4'b0),
                    .XPOS(100),.YPOS(200)) 
                  U_REC_GEN_5 (.x(x), .y(y), .enb(alive[4]),
                  .red(red_5), .green(green_5), .blue(blue_5));  
@@ -127,7 +132,7 @@ module Top(
                  U_REC_GEN_10 (.x(x), .y(y), .enb(alive[9]),
                  .red(red_10), .green(green_10), .blue(blue_10));  
 					  
-    RecGenerator #(.RVAL(4'hf),.GVAL(4'b0),.BVAL(4'b0),
+    RecGenerator #(.RVAL(4'hf),.GVAL(4'b0),.BVAL(4'hf),
                    .XPOS(300),.YPOS(300)) 
                  U_REC_GEN_11 (.x(x), .y(y), .enb(alive[10]),
                  .red(red_11), .green(green_11), .blue(blue_11));   
@@ -152,7 +157,7 @@ module Top(
                  U_REC_GEN_15 (.x(x), .y(y), .enb(alive[14]),
                  .red(red_15), .green(green_15), .blue(blue_15));  
 
-	 RecGenerator #(.RVAL(4'b1),.GVAL(4'b0),.BVAL(4'b0),
+	 RecGenerator #(.RVAL(4'b1),.GVAL(4'b0),.BVAL(4'hf),
                    .XPOS(400),.YPOS(400)) 
                  U_REC_GEN_16 (.x(x), .y(y), .enb(alive[15]),
                  .red(red_16), .green(green_16), .blue(blue_16));  

@@ -28,9 +28,7 @@ module Top(
     output [3:0] red,
     output [3:0] green,
     output [3:0] blue,
-	input  [1:0] row,
-	input  [1:0] col,
-	input  val,
+	input  [3:0] selector, // for debugging, this will load a preset
 	input	write_enb,
 	input enb,
 	input scan_enb
@@ -38,7 +36,7 @@ module Top(
     
      wire [10:0] y;
      wire [10:0] x;
-	 wire [15:0] alive;
+	 wire [15:0] alive, val;
 	 wire frame;
 	 wire [11:0] rgb_1;
 	 wire [11:0] rgb_2;
@@ -68,6 +66,12 @@ module Top(
     
     Timer #(.COUNT_MAX(100000000)) U_TIMER(.clk(clk),.trigger(trigger));
     
+    assign val = selector[0] ? 16'h3300 :
+                 selector[1] ? 16'h33CC :
+                 selector[2] ? 16'h0600 :
+                 selector[3] ? 16'h6286 :
+                               16'h0; 
+    
     Display_4x4 U_DISP_1 (.x(x),.y(y),.alive(alive),.rgb(rgb_1),.cell_x(1'b0),.cell_y(1'b0));
     Display_4x4 U_DISP_2 (.x(x),.y(y),.alive(alive),.rgb(rgb_2),.cell_x(1'b1),.cell_y(1'b0));
     Display_4x4 U_DISP_3 (.x(x),.y(y),.alive(alive),.rgb(rgb_3),.cell_x(1'b0),.cell_y(1'b1));
@@ -80,7 +84,7 @@ module Top(
     
     Counter U_COUNTER (.clk(clk), .scan(scan), .reset(reset), .count_val());
     
-	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive), .row(row), .col(col),
+	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive),
 									.val(val),.write_enb(write_enb),.scan(scan),.scan_write_val(1'b0),
 									.scan_write_enb(1'b0), .scan_read_val(), .run(run),
 									.nw(1'b0), .ne(1'b0), .se(1'b0), .sw(1'b0),

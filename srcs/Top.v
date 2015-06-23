@@ -40,23 +40,38 @@ module Top(
      wire [10:0] x;
 	 wire [15:0] alive;
 	 wire frame;
-	 wire [11:0] rgb;
+	 wire [11:0] rgb_1;
+	 wire [11:0] rgb_2;
+	 wire [11:0] rgb_3;
+	 wire [11:0] rgb_4;
 	
 	 
 	 wire run;    
 					
-	 assign red = rgb[11:8];
+	 assign red = rgb_1[11:8] ||
+	              rgb_2[11:8] ||
+	              rgb_3[11:8] ||
+	              rgb_4[11:8];
 					  
-	assign green = rgb[7:4];
+	assign green = rgb_1[7:4] ||
+	               rgb_2[7:4] ||
+	               rgb_3[7:4] ||
+	               rgb_4[7:4];
 				  
-	assign blue = rgb[3:0];
+	assign blue = rgb_1[3:0] ||
+	              rgb_2[3:0] ||
+	              rgb_3[3:0] ||
+	              rgb_4[3:0];
 						
 
     VESADriver U_MONITOR(.clk(clk),.Hsyncb(Hsync), .Vsyncb(Vsync), .x(x), .y(y),.frame(frame));
     
     Timer #(.COUNT_MAX(100000000)) U_TIMER(.clk(clk),.trigger(trigger));
     
-    Display_4x4 U_DISP(.x(x),.y(y),.alive(alive),.rgb(rgb));
+    Display_4x4 U_DISP_1 (.x(x),.y(y),.alive(alive),.rgb(rgb_1),.cell_x(1'b0),.cell_y(1'b0));
+    Display_4x4 U_DISP_2 (.x(x),.y(y),.alive(alive),.rgb(rgb_2),.cell_x(1'b1),.cell_y(1'b0));
+    Display_4x4 U_DISP_3 (.x(x),.y(y),.alive(alive),.rgb(rgb_3),.cell_x(1'b0),.cell_y(1'b1));
+    Display_4x4 U_DISP_4 (.x(x),.y(y),.alive(alive),.rgb(rgb_4),.cell_x(1'b1),.cell_y(1'b1));
     
     
     assign run = trigger & enb;

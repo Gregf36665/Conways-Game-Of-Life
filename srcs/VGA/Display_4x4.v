@@ -24,21 +24,23 @@ module Display_4x4(
     input [10:0] x,
     input [10:0] y,
     input [15:0] alive,
-    output [11:0] rgb
-    // input cell_x, input cell_y
+    output [11:0] rgb,
+    input cell_x, 
+    input cell_y
     );
     
-    wire [4:0] pos;
+    wire [3:0] pos;
     wire draw;
     
     
-    assign pos[1:0] = y[3:2];
-    assign pos[3:2] = x[3:2];
+    assign pos[1:0] = y[8:7];
+    assign pos[3:2] = x[8:7];
     
-    assign pos[4] = (x>>4 > 0 || y>>4 > 0);
+                         
+    assign draw = (cell_x == x[9] && cell_y == y[9]) ? alive[pos[3:0]] : 0;
     
-    assign draw = pos[4] == 1 ? 0 : alive[pos[3:0]];
+    assign out_of_range = x[10] == 1'b1 || y[10] == 1'b1;
     
-    assign rgb = draw ? 12'hFFF : 0;
+    assign rgb = draw & ~out_of_range ? 12'hFFF : 0;
     
 endmodule

@@ -32,8 +32,8 @@ module Display_4x4(
     wire draw;
     
     
-    assign pos[1:0] = x[3:2];
-    assign pos[3:2] = y[3:2];
+    assign pos[1:0] = y[3:2];
+    assign pos[3:2] = x[3:2];
     
     assign pos[4] = (x>>4 > 0 || y>>4 > 0);
     

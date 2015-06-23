@@ -14,6 +14,7 @@ set_property IOSTANDARD LVCMOS25 [get_ports val]
 set_property IOSTANDARD LVCMOS25 [get_ports write_enb]
 set_property IOSTANDARD LVCMOS25 [get_ports enb]
 set_property IOSTANDARD LVCMOS25 [get_ports reset]
+set_property IOSTANDARD LVCMOS25 [get_ports scan_enb]
 
 set_property PACKAGE_PIN V20 [get_ports {red[3]}]
 set_property PACKAGE_PIN U20 [get_ports {red[2]}]
@@ -39,4 +40,5 @@ set_property PACKAGE_PIN F21 [get_ports {val}]
 set_property PACKAGE_PIN N15 [get_ports {write_enb}]
 set_property PACKAGE_PIN F22 [get_ports {enb}]
 set_property PACKAGE_PIN P16 [get_ports {reset}]
+set_property PACKAGE_PIN G22 [get_ports {scan_enb}]
 

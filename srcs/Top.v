@@ -68,8 +68,8 @@ module Top(
     
     assign val = selector[0] ? 16'h3300 :
                  selector[1] ? 16'h33CC :
-                 selector[2] ? 16'h0600 :
-                 selector[3] ? 16'h6286 :
+                 selector[2] ? 16'h0700 :
+                 selector[3] ? 16'h6186 :
                                16'h0; 
     
     Display_4x4 U_DISP_1 (.x(x),.y(y),.alive(alive),.rgb(rgb_1),.cell_x(1'b0),.cell_y(1'b0));

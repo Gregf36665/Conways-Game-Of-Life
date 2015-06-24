@@ -32,9 +32,9 @@ module Controller(
     
     assign pos = state[3:2];
     
-    assign run       = state[1:0] == 2'b10;
-    assign write_mem = state[1:0] == 2'b10;
-    assign pos       = state[1:0] == 2'b11 ? pos + 1 : pos;
+    assign write_array = state[1:0] == 2'b01;
+    assign run       =   state[1:0] == 2'b10;
+    assign write_mem =   state[1:0] == 2'b10;
     
     always @(posedge clk)
         state <= state + 1;

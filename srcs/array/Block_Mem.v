@@ -22,6 +22,7 @@
 
 module Block_Mem(
     input clk,
+    input debug,
     input [1:0] array_in_vga,
     output [15:0] alive_out_vga,
     input write_enb,
@@ -31,20 +32,25 @@ module Block_Mem(
     );
     
     reg [1:0] MEM [15:0];
-    reg [1:0] vga_loc;
     reg [1:0] selector_loc;
     
     
-    assign alive_out_vga = MEM[vga_loc];
+    assign alive_out_vga = MEM[array_in_vga];
     
     always @(posedge clk) begin
-        vga_loc <= array_in_vga;
-        selector_loc <= array_selector;
-        if (write_enb)
-            MEM[array_selector] <= alive_in_selector;
+        if (debug) begin
+            MEM[0] <= 16'h0600;
+            MEM[1] <= 16'h3300;
+            MEM[2] <= 16'h33CC;
+            MEM[3] <= 16'h6186;
+        end
+        else begin
+            selector_loc <= array_selector;
+            if (write_enb)
+                MEM[array_selector] <= alive_in_selector;
+        end
     end
     
     assign alive_out_selector = MEM[selector_loc];
-    assign alive_out_vga = MEM[vga_loc];
 
 endmodule

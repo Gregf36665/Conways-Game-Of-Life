@@ -37,14 +37,15 @@ module Top(
     wire [10:0] y;
     wire [10:0] x;
 	wire [15:0] alive_out, alive_in, alive_vga, val;
-	wire [1:0] array_pos;
+	wire [1:0] vga_array_pos, array_in_selector;
 	wire frame;
+	wire [11:0] rgb;
 
 	
 	 
 	wire run;    
 					
-	assign red = rgb[11:8];;
+	assign red = rgb[11:8];
 					  
 	assign green = rgb[7:4];
 				  
@@ -63,20 +64,25 @@ module Top(
     
     Display U_DISPLAY (.x(x), .y(y), .alive(alive_vga), .rgb(rgb), .array_pos(array_pos));
     
-    Block_Mem U_MEM (.clk(clk), .array_in_vga(array_pos), .alive_out_vga(alive_vga),
-                    .write_enb(1'b0), .array_in_selector(), .alive_in_selector(alive_in),
+    Block_Mem U_MEM (.clk(clk), .array_in_vga(vga_array_pos), .alive_out_vga(alive_vga),
+                    .write_enb(write_mem), .array_selector(array_in_selector),
+                    .alive_in_selector(alive_in),
                     .alive_out_selector(alive_out));
                     
-    assign run = trigger & enb;
+    assign run = trigger & enb & fsm_run;
     
     assign scan = trigger & scan_enb;
     
     Counter U_COUNTER (.clk(clk), .scan(scan), .reset(reset), .count_val());
     
+    Controller U_CONTROL (.clk(clk), .write_array(write_4x4), .run(fsm_run),
+                          .pos(array_in_selector), .write_mem(write_mem));
+    
 	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive_in),
-									.val(val),.write_enb(write_enb),.scan(scan),.scan_write_val(1'b0),
+									.val(alive_out),.write_enb(write_4x4),
+									.scan(scan),.scan_write_val(1'b0),
 									.scan_write_enb(1'b0), .scan_read_val(), .run(run),
 									.nw(1'b0), .ne(1'b0), .se(1'b0), .sw(1'b0),
-									.n(4'b0), .e(4'b0), .s(4'b0), .w(4'b0) );
+									.n(4'b0), .e(4'b0), .s(4'b0), .w(4'b0));
 	 
 endmodule

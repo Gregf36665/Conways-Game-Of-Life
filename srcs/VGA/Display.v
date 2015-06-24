@@ -45,8 +45,8 @@ module Display(
     assign rgb = draw & ~out_of_range ? color : 0;
     
     // Just to get some patterns
-    assign color[11:8] = {3{( cell_x | ~cell_y)} };
-    assign color[7:4] =  {3{(~cell_x |  cell_y)} };
-    assign color[3:0] =  {3{( cell_x &  cell_y)} };
+    assign color[11:8] = {3{( x[9] | ~y[9])} };
+    assign color[7:4] =  {3{(~x[9] |  y[9])} };
+    assign color[3:0] =  {3{( x[9] &  y[9])} };
     
 endmodule

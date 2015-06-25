@@ -31,7 +31,7 @@ module Block_Mem(
     output [15:0] alive_out_selector
     );
     
-    reg [1:0] MEM [15:0];
+    reg [15:0] MEM [3:0];
     reg [1:0] selector_loc;
     
     

@@ -39,7 +39,7 @@ module Block_Mem(
     
     always @(posedge clk) begin
         if (debug) begin
-            MEM[0] <= 16'h0600;
+            MEM[0] <= 16'h0700;
             MEM[1] <= 16'h3300;
             MEM[2] <= 16'h33CC;
             MEM[3] <= 16'h6186;

@@ -31,7 +31,8 @@ module Top(
 	input  [3:0] selector, // for debugging, this will load a preset
 	input	write_enb,
 	input enb,
-	input scan_enb
+	input scan_enb,
+	output[3:0] leds
     );
     
     wire [10:0] y;
@@ -41,7 +42,8 @@ module Top(
 	wire frame;
 	wire [11:0] rgb;
 
-	
+	assign leds[1:0] = array_in_selector;
+	assign leds[3:2] = vga_array_pos;
 	 
 	wire run;    
 					
@@ -54,29 +56,27 @@ module Top(
 
     VESADriver U_MONITOR(.clk(clk),.Hsyncb(Hsync), .Vsyncb(Vsync), .x(x), .y(y),.frame(frame));
     
-    Timer #(.COUNT_MAX(100000000)) U_TIMER(.clk(clk),.trigger(trigger));
+    Timer #(.COUNT_MAX(100000000)) U_TIMER_1_SEC(.clk(clk),.trigger(trigger));
     
-    assign val = selector[0] ? 16'h3300 :
-                 selector[1] ? 16'h33CC :
-                 selector[2] ? 16'h0700 :
-                 selector[3] ? 16'h6186 :
-                               16'h0; 
+    Timer #(.COUNT_MAX(25000000)) U_TIMER_1_4_SEC(.clk(clk),.trigger(trigger_1_4));
     
-    Display U_DISPLAY (.x(x), .y(y), .alive(alive_vga), .rgb(rgb), .array_pos(array_pos));
+    
+    Display U_DISPLAY (.x(x), .y(y), .alive(alive_vga), .rgb(rgb), .array_pos(vga_array_pos));
     
     Block_Mem U_MEM (.clk(clk), .array_in_vga(vga_array_pos), .alive_out_vga(alive_vga),
                     .write_enb(write_mem), .array_selector(array_in_selector),
                     .alive_in_selector(alive_in),
-                    .alive_out_selector(alive_out));
+                    .alive_out_selector(alive_out), .debug(selector[0]));
                     
-    assign run = trigger & enb & fsm_run;
+    assign run = enb & fsm_run;
     
     assign scan = trigger & scan_enb;
     
-    Counter U_COUNTER (.clk(clk), .scan(scan), .reset(reset), .count_val());
+    //Counter U_COUNTER (.clk(clk), .scan(scan), .reset(reset), .count_val());
     
     Controller U_CONTROL (.clk(clk), .write_array(write_4x4), .run(fsm_run),
-                          .pos(array_in_selector), .write_mem(write_mem));
+                          .run_enb(trigger_1_4),.pos(array_in_selector),
+                          .write_mem(write_mem), .reset(reset));
     
 	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive_in),
 									.val(alive_out),.write_enb(write_4x4),

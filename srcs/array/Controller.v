@@ -22,6 +22,7 @@
 
 module Controller(
     input clk,
+	 input reset,
     output write_array,
     output run,
     output [1:0] pos,
@@ -34,10 +35,11 @@ module Controller(
     
     assign write_array = state[1:0] == 2'b01;
     assign run       =   state[1:0] == 2'b10;
-    assign write_mem =   state[1:0] == 2'b10;
+    assign write_mem =   state[1:0] == 2'b11;
     
     always @(posedge clk)
-        state <= state + 1;
+        if(reset) state <= 0;
+		  else state <= state + 1;
         
         
     

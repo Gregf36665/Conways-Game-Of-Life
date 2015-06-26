@@ -56,7 +56,7 @@ module Controller_test;
 		reset = 1;
 		expected_pos = 0;
 
-		// Wait 100 ns for global reset to finish
+		// Wait 11 ns for global reset to finish
 		#11;
 		reset = 0;
         
@@ -89,7 +89,7 @@ module Controller_test;
 		
 		// S0.2
 		if(write_array) $stop;
-		if(!run) $stop;
+		if(run) $stop;
 		if(write_mem) $stop;
 		if(expected_pos != pos) begin
          $display("Error with state 0.0");
@@ -138,7 +138,7 @@ module Controller_test;
 		
 		// S1.2
 		if(write_array) $stop;
-		if(!run) $stop;
+		if(run) $stop;
 		if(write_mem) $stop;
 		if(expected_pos != pos) begin
          $display("Error with state 0.0");
@@ -187,7 +187,7 @@ module Controller_test;
 	
 		// S2.2
 		if(write_array) $stop;
-		if(!run) $stop;
+		if(run) $stop;
 		if(write_mem) $stop;
 		if(expected_pos != pos) begin
          $display("Error with state 0.0");
@@ -236,7 +236,7 @@ module Controller_test;
 		
 		// S3.2
 		if(write_array) $stop;
-		if(!run) $stop;
+		if(run) $stop;
 		if(write_mem) $stop;
 		if(expected_pos != pos) begin
          $display("Error with state 0.0");
@@ -259,7 +259,6 @@ module Controller_test;
 		#10;
 
 		$stop;
-		
 
 	end
       

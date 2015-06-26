@@ -44,7 +44,7 @@ module Controller(
     always @(posedge clk) begin
         if(reset) begin
             state <= 0;
-            
+				run_output_enb <= 0;
         end
 		else state <= state + 1;
     end

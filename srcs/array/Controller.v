@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Lafayette College
+// Engineer: Greg Flynn
 // 
 // Create Date: 06/24/2015 04:36:50 PM
 // Design Name: 
 // Module Name: Controller
-// Project Name: 
+// Project Name:
 // Target Devices: 
 // Tool Versions: 
 // Description: 
@@ -16,13 +16,12 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// In the end this should be moved into the PS
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module Controller(
     input clk,
-    input run_enb,
 	input reset,
     output write_array,
     output run,
@@ -30,8 +29,11 @@ module Controller(
     output write_mem
     );
     
+    parameter DELAY = 100000000; // set the pause time for the enable signal
+    
     reg [3:0] state;
     reg run_output_enb;
+    reg [31:0] timer;
     
     assign pos = state[3:2];
     
@@ -40,9 +42,20 @@ module Controller(
     assign write_mem =   state[1:0] == 2'b11;
     
     always @(posedge clk) begin
-        if(reset) state <= 0;
+        if(reset) begin
+            state <= 0;
+            timer <= 0;
+        end
 		else state <= state + 1;
-        if(state == 0) run_output_enb <= run_enb;
     end
+    
+    // Pulse for running simulator
+    always @(posedge clk)
+        if(timer >= DELAY) run_output_enb <= 1;
+        else if(timer == (DELAY + 16) )  begin
+            timer = 0;
+            run_output_enb <= 0;
+        end
+        else timer = 0;
     
 endmodule

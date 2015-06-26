@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Lafayette College
+// Engineer: Greg Flynn
 // 
 // Create Date: 06/08/2015 10:42:10 AM
 // Design Name: 
@@ -58,7 +58,6 @@ module Top(
     
     Timer #(.COUNT_MAX(100000000)) U_TIMER_1_SEC(.clk(clk),.trigger(trigger));
     
-    Timer #(.COUNT_MAX(25000000)) U_TIMER_1_4_SEC(.clk(clk),.trigger(trigger_1_4));
     
     
     Display U_DISPLAY (.x(x), .y(y), .alive(alive_vga), .rgb(rgb), .array_pos(vga_array_pos));
@@ -75,8 +74,8 @@ module Top(
     //Counter U_COUNTER (.clk(clk), .scan(scan), .reset(reset), .count_val());
     
     Controller U_CONTROL (.clk(clk), .write_array(write_4x4), .run(fsm_run),
-                          .run_enb(trigger_1_4),.pos(array_in_selector),
-                          .write_mem(write_mem), .reset(reset));
+                          .pos(array_in_selector), .write_mem(write_mem),
+                          .reset(reset));
     
 	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive_in),
 									.val(alive_out),.write_enb(write_4x4),

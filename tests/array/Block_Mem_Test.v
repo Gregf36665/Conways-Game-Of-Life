@@ -77,7 +77,7 @@ module Block_Mem_Test;
 		
 		// set to debug settings
 		debug = 1;
-		expected_alive = 16'h0600;
+		expected_alive = 16'h0700;
 		#10;
 		debug = 0;
 		if(expected_alive != alive_out_selector) begin

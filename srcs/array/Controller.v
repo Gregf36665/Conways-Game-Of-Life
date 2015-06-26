@@ -44,18 +44,24 @@ module Controller(
     always @(posedge clk) begin
         if(reset) begin
             state <= 0;
-            timer <= 0;
+            
         end
 		else state <= state + 1;
     end
     
     // Pulse for running simulator
     always @(posedge clk)
-        if(timer >= DELAY) run_output_enb <= 1;
-        else if(timer == (DELAY + 16) )  begin
-            timer = 0;
-            run_output_enb <= 0;
+        if (reset) timer <= 0;
+        else begin
+            if(timer >= DELAY) begin
+                run_output_enb <= 1;
+                timer <= timer + 1;
+            end
+            else if(timer == (DELAY + 16) )  begin
+                timer <= 0;
+                run_output_enb <= 0;
+            end
+            else timer <= timer + 1;
         end
-        else timer = 0;
     
 endmodule

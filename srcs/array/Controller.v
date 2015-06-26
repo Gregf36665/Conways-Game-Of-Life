@@ -29,7 +29,8 @@ module Controller(
     output write_mem
     );
     
-    parameter DELAY = 100000000; // set the pause time for the enable signal
+    parameter DELAY = 99999999; // set the pause time for the enable signal
+                                // default 1 clk cycle less than 1 sec
     
     reg [3:0] state;
     reg run_output_enb;
@@ -42,16 +43,16 @@ module Controller(
     assign write_mem =   state[1:0] == 2'b11;
     
     always @(posedge clk) begin
-        if(reset) begin
-            state <= 0;
-				run_output_enb <= 0;
-        end
+        if(reset) state <= 0;
 		else state <= state + 1;
     end
     
     // Pulse for running simulator
     always @(posedge clk)
-        if (reset) timer <= 0;
+        if (reset) begin
+            timer <= 0;
+            run_output_enb <= 0;
+        end
         else begin
 				if(timer == (DELAY + 16) )  begin
                 timer <= 0;

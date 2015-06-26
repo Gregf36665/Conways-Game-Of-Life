@@ -53,13 +53,13 @@ module Controller(
     always @(posedge clk)
         if (reset) timer <= 0;
         else begin
-            if(timer >= DELAY) begin
-                run_output_enb <= 1;
-                timer <= timer + 1;
-            end
-            else if(timer == (DELAY + 16) )  begin
+				if(timer == (DELAY + 16) )  begin
                 timer <= 0;
                 run_output_enb <= 0;
+            end
+				else if(timer >= DELAY) begin
+                run_output_enb <= 1;
+                timer <= timer + 1;
             end
             else timer <= timer + 1;
         end

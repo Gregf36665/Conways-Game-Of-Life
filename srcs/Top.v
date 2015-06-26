@@ -29,9 +29,7 @@ module Top(
     output [3:0] green,
     output [3:0] blue,
 	input  [3:0] selector, // for debugging, this will load a preset
-	input	write_enb,
 	input enb,
-	input scan_enb,
 	output[3:0] leds
     );
     
@@ -69,18 +67,13 @@ module Top(
                     
     assign run = enb & fsm_run;
     
-    assign scan = trigger & scan_enb;
-    
-    //Counter U_COUNTER (.clk(clk), .scan(scan), .reset(reset), .count_val());
     
     Controller U_CONTROL (.clk(clk), .write_array(write_4x4), .run(fsm_run),
                           .pos(array_in_selector), .write_mem(write_mem),
                           .reset(reset));
     
 	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive_in),
-									.val(alive_out),.write_enb(write_4x4),
-									.scan(scan),.scan_write_val(1'b0),
-									.scan_write_enb(1'b0), .scan_read_val(), .run(run),
+									.val(alive_out),.write_enb(write_4x4),.run(run),
 									.nw(1'b0), .ne(1'b0), .se(1'b0), .sw(1'b0),
 									.n(4'b0), .e(4'b0), .s(4'b0), .w(4'b0));
 	 

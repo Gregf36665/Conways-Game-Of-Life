@@ -30,9 +30,6 @@ module life_cell(input clk,
                         write, // enable writing
                         val, // to set the cell to a certain value
                         enb, // enable the cell to come to life
-								scan, // enable scan
-								scan_val, // the value to write when scanning
-											 //(normally east cell)
 		                output reg alive
 		                );
 
@@ -42,10 +39,7 @@ module life_cell(input clk,
     assign 		neighbor_count = n + ne + e + se + s + sw + w + nw;
 
     always @(posedge clk) begin 
-	   if (scan) begin
-				alive <= scan_val;
-				end
-		else if (write) begin
+		if (write) begin
 				alive <= val;
 				end
 		else if (reset) begin

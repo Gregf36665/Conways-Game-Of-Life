@@ -9,7 +9,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports Hsync]
 set_property IOSTANDARD LVCMOS33 [get_ports Vsync]
 set_property IOSTANDARD LVCMOS33 [get_ports leds]
 
-set_property IOSTANDARD LVCMOS25 [get_ports selector]
+set_property IOSTANDARD LVCMOS25 [get_ports debug]
 set_property IOSTANDARD LVCMOS25 [get_ports enb]
 set_property IOSTANDARD LVCMOS25 [get_ports reset]
 
@@ -29,10 +29,7 @@ set_property PACKAGE_PIN AB19 [get_ports {blue[0]}]
 set_property PACKAGE_PIN AA19 [get_ports {Hsync}]
 set_property PACKAGE_PIN Y19 [get_ports {Vsync}]
 
-set_property PACKAGE_PIN M15 [get_ports {selector[3]}]
-set_property PACKAGE_PIN H17 [get_ports {selector[2]}]
-set_property PACKAGE_PIN H18 [get_ports {selector[1]}]
-set_property PACKAGE_PIN H19 [get_ports {selector[0]}]
+set_property PACKAGE_PIN H19 [get_ports {debug}]
 set_property PACKAGE_PIN F22 [get_ports {enb}]
 set_property PACKAGE_PIN P16 [get_ports {reset}]
 

@@ -28,7 +28,7 @@ module Top(
     output [3:0] red,
     output [3:0] green,
     output [3:0] blue,
-	input  [3:0] selector, // for debugging, this will load a preset
+	input debug,
 	input enb,
 	output[3:0] leds
     );
@@ -50,6 +50,9 @@ module Top(
 	assign green = rgb[7:4];
 				  
 	assign blue = rgb[3:0];
+	
+	assign control_reset = reset | debug;
+	
 						
 
     VESADriver U_MONITOR(.clk(clk),.Hsyncb(Hsync), .Vsyncb(Vsync), .x(x), .y(y),.frame(frame));
@@ -63,14 +66,14 @@ module Top(
     Block_Mem U_MEM (.clk(clk), .array_in_vga(vga_array_pos), .alive_out_vga(alive_vga),
                     .write_enb(write_mem), .array_selector(array_in_selector),
                     .alive_in_selector(alive_in),
-                    .alive_out_selector(alive_out), .debug(selector[0]));
+                    .alive_out_selector(alive_out), .debug(debug));
                     
     assign run = enb & fsm_run;
     
     
     Controller U_CONTROL (.clk(clk), .write_array(write_4x4), .run(fsm_run),
                           .pos(array_in_selector), .write_mem(write_mem),
-                          .reset(reset));
+                          .reset(control_reset));
     
 	life_array_4x4 U_Array (.clk(clk),.reset(reset), .alive(alive_in),
 									.val(alive_out),.write_enb(write_4x4),.run(run),

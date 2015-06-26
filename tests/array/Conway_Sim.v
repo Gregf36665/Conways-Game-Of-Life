@@ -22,7 +22,6 @@
 
 module Conway_Sim;
 
-
     task display_life;
       input [15:0] alive;
       integer i,j;
@@ -33,7 +32,7 @@ module Conway_Sim;
          $display();
       end
       
-   endtask
+    endtask
             
     reg clk = 1;
     wire [15:0] alive;
@@ -44,11 +43,19 @@ module Conway_Sim;
     reg write_enb;
     reg enb = 0;
 	 reg scan = 0;
+	 reg [3:0] n = 4'b0,
+				  e = 4'b0,
+				  s = 4'b0,
+				  w = 4'b0;
+				  
+	 reg nw = 0,
+		  ne = 0,
+		  se = 0,
+		  sw = 0;
 	 
     reg [15:0] expected_alive;
     
-    always #5 clk = ~clk;
-    
+    always #5 clk = ~clk;   
       
     life_array_4x4 arr (.clk(clk),
                         .reset(reset),
@@ -61,8 +68,17 @@ module Conway_Sim;
 								.scan(scan),
 								.scan_write_val(1'b0),
 								.scan_write_enb(1'b0),
-								.scan_read_val(scan_read_val)
+								.scan_read_val(scan_read_val),
+								.n(n),
+								.e(e),
+								.s(s),
+								.w(w),
+								.nw(nw),
+								.ne(ne),
+								.se(se),
+								.sw(sw)
                         );
+								
    
     initial
     begin
@@ -100,6 +116,7 @@ module Conway_Sim;
       #20;
       expected_alive = 15'b0;
       #10;
+		#100;
       if(expected_alive != alive) begin
          $display("Error with death, lone cell survived!");
          display_life(alive);

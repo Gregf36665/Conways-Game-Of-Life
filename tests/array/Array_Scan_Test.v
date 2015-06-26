@@ -156,16 +156,11 @@ module Array_Scan_Test;
          $stop;
       end
       
-      // let them start
-      run = 1;
-      #10;
-      expected_alive = 16'h2664;
 		
 		scan = 1;
 		#160;
 		scan = 0;
 		
-		if(expected_alive != alive) #10; // out by one period
 		if(expected_alive != alive) begin
          $display("Error with toad formation"); 
          display_life(alive);

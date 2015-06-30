@@ -37,8 +37,7 @@ module Column_test;
 	reg se;
 	reg sw;
 	reg write_enb;
-	reg val;
-	reg [1:0] row;
+	reg [3:0] val;
 	reg enable;
 	
 	reg [3:0] expected_alive;
@@ -134,14 +133,8 @@ module Column_test;
 		w_col = 4'b0;
 		
 		// bring the entire column to life
-		val = 1;
+		val = 4'hf;
 		write_enb = 1;
-		# 10;
-		row = 1;
-		#10;
-		row = 2;
-		#10;
-		row = 3;
 		#10;
 		write_enb = 0;
 		#10;

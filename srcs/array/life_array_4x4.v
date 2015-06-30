@@ -37,12 +37,18 @@ module life_array_4x4(input clk,
 	 reg toggled;
 	 
 	 always @(posedge clk) begin
-	     if (step & ~toggled) begin
-		      run <= 1;
-				toggled <= 1;
+	     if(reset) begin
+		      toggled <= 0;
+				run <= 0;
+				end
+		  else begin
+	         if (step & ~toggled) begin
+		          run <= 1;
+				    toggled <= 1;
+		      end
+		      if (toggled) run <= 0;
+		      if (!step) toggled <= 0;
 		  end
-		  if (toggled) run <= 0;
-		  if (!step) toggled <= 0;
 	 end
 	 
     // internal connections

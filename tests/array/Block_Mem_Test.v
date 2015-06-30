@@ -77,21 +77,21 @@ module Block_Mem_Test;
 		
 		// set to debug settings
 		debug = 1;
-		expected_alive = 16'h0700;
+		expected_alive = 16'hC813;
 		#10;
 		debug = 0;
 		if(expected_alive != alive_out_selector) begin
          $display("Error with debug memory location 0!");       
          $stop;
       end
-		expected_alive = 16'h3300;
+		expected_alive = 16'h338C;
 		array_selector = 1;
 		#10;
 		if(expected_alive != alive_out_selector) begin
          $display("Error with debug memory location 1!");      
          $stop;
       end
-		expected_alive = 16'h033CC;
+		expected_alive = 16'h33CC;
 		array_selector = 2;
 		#10;
 		if(expected_alive != alive_out_selector) begin

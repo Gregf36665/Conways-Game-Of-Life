@@ -40,8 +40,6 @@ module Column_test;
 	reg val;
 	reg [1:0] row;
 	reg enable;
-	reg[3:0] scan_val;
-	reg scan;
 	
 	reg [3:0] expected_alive;
 
@@ -62,11 +60,8 @@ module Column_test;
 		.sw(sw), 
 		.write_enb(write_enb), 
 		.val(val), 
-		.row(row), 
 		.alive_col(alive_col), 
-		.enable(enable),
-		.scan(scan),
-		.scan_val(scan_val)
+		.enable(enable)
 	);
 
 	always begin
@@ -87,10 +82,7 @@ module Column_test;
 		sw = 0;
 		write_enb = 0;
 		val = 0;
-		row = 0;
 		enable = 0;
-		scan_val = 0;
-		scan = 0;
 
 		// Wait 11 ns for global reset to finish
 		#11;
@@ -168,44 +160,7 @@ module Column_test;
          $display("Error with death column survived!");        
          $stop;
       end
-		// test the scan
-		enable = 0;
-		scan_val = 4'b0001;
-		scan = 1;
-		#10;
-		expected_alive = 4'b0001;
-		if(expected_alive != alive_col) begin
-         $display("Error with scan!");        
-         $stop;
-      end
-		scan_val = 4'b1000;
-		#10;
-		expected_alive = 4'b1000;
-		if(expected_alive != alive_col) begin
-         $display("Error with scan!");        
-         $stop;
-      end
-		scan_val = 4'b0110;
-		#10;
-		expected_alive = 4'b0110;
-		if(expected_alive != alive_col) begin
-         $display("Error with scan!");        
-         $stop;
-      end
-		scan_val = 4'b1111;
-		#10;
-		expected_alive = 4'b1111;
-		if(expected_alive != alive_col) begin
-         $display("Error with scan!");        
-         $stop;
-      end
-		scan = 0;
-		#50;
-		expected_alive = 4'b1111;
-		if(expected_alive != alive_col) begin
-         $display("Error with scan!");        
-         $stop;
-      end
+		
 		$stop;
 		
 

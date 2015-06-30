@@ -36,12 +36,10 @@ module Conway_Sim;
             
     reg clk = 1;
     wire [15:0] alive;
-	 wire scan_read_val;
     reg reset = 0;
-    reg [1:0] row, col;
-    reg val;
+    reg [15:0] val;
     reg write_enb;
-    reg enb = 0;
+    reg step = 0;
 	 reg scan = 0;
 	 reg [3:0] n = 4'b0,
 				  e = 4'b0,
@@ -60,15 +58,9 @@ module Conway_Sim;
     life_array_4x4 arr (.clk(clk),
                         .reset(reset),
                         .alive(alive),
-                        .row(row),
-                        .col(col),
                         .val(val),
                         .write_enb(write_enb),
-                        .run(enb),
-								.scan(scan),
-								.scan_write_val(1'b0),
-								.scan_write_enb(1'b0),
-								.scan_read_val(scan_read_val),
+                        .step(step),
 								.n(n),
 								.e(e),
 								.s(s),
@@ -79,459 +71,229 @@ module Conway_Sim;
 								.sw(sw)
                         );
 								
-   
-    initial
-    begin
-       // reset everything
-      reset = 1;
-       #10
-      reset = 0;
-      #10
-      
-      // disable the grid during configuration
-      enb = 0;
-      
-      // select top left only
-      
-      row = 0;
-      col = 0;
-      val = 1;
-      write_enb = 1;
-      #10;
-      write_enb = 0;
-      expected_alive = 15'b1;
-      #50;
-      
-      @(posedge clk) #1; // offset by 1 time period
-      
-      // does enable work
-      if(expected_alive != alive) begin
-         $display("Error with basic steady state!");
-         display_life(alive);         
-         $stop;
-      end
-      
-      // check it dies
-      enb = 1;
-      #20;
-      expected_alive = 15'b0;
-      #10;
-		#100;
-      if(expected_alive != alive) begin
-         $display("Error with death, lone cell survived!");
-         display_life(alive);
-         $stop;
-      end
-      
-      // try a line of 2 going down
-      enb = 0;
-      write_enb = 1;
-      #10;
-      
-      row = 0;
-      col = 0;
-      val = 1;
-   
-      #10;
-      row = 1;
-      
-      #10;
-      write_enb = 0;
-      expected_alive = 15'b11;
-      #10;
-      if(expected_alive != alive) begin
-         $display("Error with vertical line formation");
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them die
-      enb = 1;
-      
-      #30;
-      
-      expected_alive = 15'b0;
-      if(expected_alive != alive) begin
-         $display("Error with death, vertical line survived!");
-         display_life(alive);
-         $stop;
-      end
-      
-      // try a line of 2 going across
-      enb = 0;
-      write_enb = 1;
-      
-      row = 0;
-      col = 0;
-   
-      #10;
-      col = 1;
-      
-      #10;
-      write_enb = 0;
-      expected_alive = 16'h0011;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with horizontal line formation on first row");
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them die
-      enb = 1;
-      
-      #30;
-      
-      expected_alive = 15'b0;
-      if(expected_alive != alive) begin
-         $display("Error with death, horizontal line survived on the first row!"); 
-         display_life(alive);
-         $stop;
-      end
-            
-      // try a line of 2 going across on the second row
-      enb = 0;
-      row = 1;
-      col = 0;
-      write_enb = 1;
-   
-      #10;
-      col = 1;
-      
-      #10;
-      write_enb = 0;
-      expected_alive = 16'h0022;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with horizontal line formation on the second row"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them die
-      enb = 1;
-      
-      #30;
-      
-      expected_alive = 15'b0;
-      if(expected_alive != alive) begin
-         $display("Error with death, horizontal line survived on the second row!"); 
-         display_life(alive);
-         $stop;
-      end      
-      
-      // configure for line of 3, should oscillate
-      /*
-      oooo      oXoo
-      XXXo  <-> oXoo
-      oooo      oXoo
-      oooo      oooo
-      */
-      enb = 0;
-      write_enb = 1;
-      row = 1;
-      col = 0;
-   
-      #10;
-      col = 1;
-      
-      #10;
-      col = 2;
-      #10;
-      
-      write_enb = 0;
-      expected_alive = 16'h0222;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with blinker formation"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them start
-      enb = 1;
-      expected_alive = 16'h0070;
-      
-      #100;
-      
-      if(expected_alive != alive) begin
-         // assume out by one period
-         #10;
-      end
-      
-      if(expected_alive != alive) begin
-         $display("Error with oscillation, blinker fails"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      $display("PASSED: Configuration 'Blinker'");
-      
-      // configure for 'block', should be stable
-      /*
-      oooo
-      oXXo
-      oXXo
-      oooo
-      */
-      
-      enb = 0;
-      
-      // reset the array
+    initial begin
+	   // reset everything
       reset = 1;
       #10;
       reset = 0;
-      
-      #10;
-      write_enb = 1;
-      row = 1;
-      col = 1;
-      val = 1;
-   
-      #10;
-      col = 2;
-      
-      #10;
-      row = 2;
-      
-      #10;
-      col = 1;
-      
-      #10;
-      
-      write_enb = 0;
-      expected_alive = 16'h0660;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with block formation"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them start
-      enb = 1;
-      
-      #100;
-      
-      if(expected_alive != alive) begin
-         $display("Error with stabliliy, block fails"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      $display("PASSED: Configuration 'Block'");
-      
-      // configure for 'beehive', should be stable
-      /* 
-      oXXo
-      XooX
-      XooX
-      oXXo
-      */
-      enb = 0;
-      
-      // reset the array
-      reset = 1;
-      row = 1;
-      col = 0;
-      
-      #10;
-      reset = 0;
-      
-      write_enb = 1;
-      row = 1;
-      col = 0;
-      
-      #10;
-      row = 2;
-      
-      #10;
-      col = 1;
-      row = 0;
-      
-      #10;
-      row = 3;
-
-      #10;
-      col = 2;
-      row = 3;
-      
-      #10;
-      row = 0;
-      col = 2;
-      
-      #10;
-      col = 3;
-      row = 1;
-      
-      #10;
-      row = 2;
-      
-      #10;
-
-      write_enb = 0;
-      expected_alive = 16'h6996;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with beehive formation"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them start
-      enb = 1;
-      
-      #100;
-      
-      if(expected_alive != alive) begin
-         $display("Error with stabliliy, beehive fails"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      $display("PASSED: Configuration 'Beehive'");
-
-      // configure for 'Beacon', should be period 2
-      /* 
-      XXoo     XXoo
-      XXoo <-> Xooo
-      ooXX     oooX
-      ooXX     ooXX
-      */
-      enb = 0;
-      
-      // reset the array
-      reset = 1;
-      row = 0;
-      col = 0;
-      
-      #10;
-      reset = 0;
-      write_enb = 1;
-      
-      #10;
-      row = 1;
-      
-      #10;
-      col = 1;
-      
-      #10;
-      row = 0;
-
-      #10;
-      col = 2;
-      row = 2;
-
-      #10;
-      row = 3;
-      
-      #10;
-      col = 3;
-      
-      #10;
-      row = 2;
-      
-      #10;
-
-      write_enb = 0;
-      expected_alive = 16'hCC33;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with beacon formation"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them start
-      enb = 1;
-      
-      expected_alive = 16'hC813;
-      
-      #100;
-      
-      if(expected_alive != alive) begin
-         // assume out by one period
-         #10;
-      end
-      
-      if(expected_alive != alive) begin
-         $display("Error with oscillation, beacon fails"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      $display("PASSED: Configuration 'Beacon'");   
-
-      // configure for 'Toad', should be period 2
-      /* 
-      ooXo     oooo
-		XooX <-> oXXX
-		XooX     XXXo
-		oXoo     oooo
-      */
-      enb = 0;
-      
-      // reset the array
-      reset = 1;
-      row = 1;
-      col = 0;
-      
-      #10;
-      reset = 0;
-      write_enb = 1;
-      
-      #10;
-		row = 2;
+      #11;
+		
+		// write to the top left cell only
+		val = 16'h0001;
+		expected_alive = 16'h0001;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write to top left cell only");
+		    $stop;
+		end
+		#10;
+		
+		// check it dies
+		step = 1; 
+		#10;
+		expected_alive = 16'h0;
+		if(expected_alive != alive) begin
+		    $display("Top left cell failed to die");
+		    $stop;
+		end
+		
+		step = 0;
+		$display("Top left passed");
+		
+		// write a horizontal line
+		val = 16'h0011;
+		expected_alive = 16'h0011;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write to horizontal line");
+		    $stop;
+		end
+		#10;
+		
+		// check it dies
+		step = 1; 
+		#10;
+		expected_alive = 16'h0;
+		if(expected_alive != alive) begin
+		    $display("Horizontal line failed to die");
+		    $stop;
+		end
+		
+		step = 0;
+		$display("Horizontal line passed");
+		
+		// write a vertical line
+		val = 16'h0002;
+		expected_alive = 16'h0002;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write to vertical line");
+		    $stop; 
+		end
+		#10;
+		
+		// check it dies
+		step = 1; 
+		#10;
+		expected_alive = 16'h0;
+		if(expected_alive != alive) begin
+		    $display("Vertical line failed to die");
+		    $stop;
+		end
+		
+		step = 0;
+		$display("Vertical line passed");
+		
+		// write a blinker
+		val = 16'h0070;
+		expected_alive = 16'h0070;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write blinker");
+		    $stop; 
+		end
+		#10;
+		
+		// check it doesn't die
+		step = 1; 
+		#10;
+		expected_alive = 16'h0222;
+		if(expected_alive != alive) begin
+		    $display("Blinker failed to blink");
+		    $stop;
+		end
 		
 		#10;
-		col = 1;
-		row = 3;
+		// test step (nothing should have changed)
+		if(expected_alive != alive) begin
+		    $display("Cell went to next generation when it shouldn't have");
+		    $stop;
+		end
 		
-		#10;
-		col = 2;
-		row = 0;
-		
-		#10;
-		col = 3;
-		row = 1;
-		
-		#10;
-		row = 2;
+		step = 0;
+		$display("Blinker passed");
       
-      #10;
+		// write a block
+		val = 16'h0660;
+		expected_alive = 16'h0660;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write block");
+		    $stop; 
+		end
+		#10;
+		
+		// check it doesn't die
+		step = 1; 
+		#10;
+		if(expected_alive != alive) begin 
+		    $display("Block failed to stay the same");
+		    $stop;
+		end
+		
+		$display("Block passed");
+		
+		// write a beacon
+		val = 16'hCC33;
+		expected_alive = 16'hCC33;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write beacon");
+			 $display("Warning, could be due to write_enb not resetting toggle");
+		    $stop; 
+		end
+		#10;
+		
+		// check it doesn't die
+		step = 1; 
+		#10;
+		expected_alive = 16'hC813;
+		if(expected_alive != alive) begin
+		    $display("Beacon failed to blink");
+		    $stop;
+		end
+		
+		#10;
+		// test step (nothing should have changed)
+		if(expected_alive != alive) begin
+		    $display("Cell went to next generation when it shouldn't have");
+		    $stop;
+		end
+		$display("Beacon passed");
+		
+		// write a beehive
+		val = 16'h6996;
+		expected_alive = 16'h6996;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write beehive");
+		    $stop; 
+		end
+		#10;
+		
+		// check it doesn't die
+		step = 1; 
+		#10;
+		if(expected_alive != alive) begin
+		    $display("Beehive failed to stay static");
+		    $stop;
+		end
+		
+		// write a toad
+		val = 16'h6186;
+		expected_alive = 16'h6186;
+		#10;
+		write_enb = 1;
+		#10;
+		write_enb = 0;
+		if(expected_alive != alive) begin
+		    $display("Failed to write toad");
+		    $stop; 
+		end
+		#10;
+		
+		// check it doesn't die
+		step = 1; 
+		#10;
+		expected_alive = 16'h2664;
+		if(expected_alive != alive) begin
+		    $display("Toad failed to blink");
+		    $stop;
+		end
+		
+		#10;
+		// test step (nothing should have changed)
+		if(expected_alive != alive) begin
+		    $display("Cell went to next generation when it shouldn't have");
+		    $stop;
+		end
 
-      write_enb = 0;
-      expected_alive = 16'h6186;
-      #20;
-      if(expected_alive != alive) begin
-         $display("Error with toad formation"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      // let them start
-      enb = 1;
-      
-      expected_alive = 16'h2664;
-      
-      #100;
-      
-      if(expected_alive != alive) begin
-         // assume out by one period
-         #10;
-      end
-      
-      if(expected_alive != alive) begin
-         $display("Error with oscillation, toad fails"); 
-         display_life(alive);
-         $stop;
-      end
-      
-      $display("PASSED: Configuration 'Toad'");         
-      
-      $display("Good run");
-      $stop;
-   end
+		$display("Toad passed");
+		
+		
+		$stop;
+	end
    
 endmodule
 

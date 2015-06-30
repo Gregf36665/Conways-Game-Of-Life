@@ -291,7 +291,32 @@ module Conway_Sim;
 
 		$display("Toad passed");
 		
+		$display("Testing edges");
+		n = 4'b0001;
+		w = 4'b0001;
+		nw = 1;
+		val = 16'h0;
+		expected_alive = 4'h0;
+		#10;
+		write_enb = 1;
+		#10;
+		if(expected_alive != alive) begin
+		    $display("Falied to clear array");
+		    $stop;
+		end
+		#10;
+		write_enb = 0;
+		step = 1;
+		#10;
+		expected_alive = 4'h0001;
+		if(expected_alive != alive) begin
+		    $display("Top left cell failed to come to life!");
+		    $stop;
+		end
+		$display("Edge passed");
 		
+		#10;
+		$display("All tests passed");
 		$stop;
 	end
    

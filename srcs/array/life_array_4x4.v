@@ -20,7 +20,7 @@ module life_array_4x4(input clk,
 		      output [15:0] alive,
 		      input [15:0] val,
 		      input write_enb,
-		      input run, // set this high to start running the tiles
+		      input step, // set this high to start running the tiles
 		      input nw,
 		      input ne,
 		      input se,
@@ -33,10 +33,22 @@ module life_array_4x4(input clk,
 		      );
 
 
+	 reg run;
+	 reg toggled;
+	 
+	 always @(posedge clk) begin
+	     if (step & ~toggled) begin
+		      run <= 1;
+				toggled <= 1;
+		  end
+		  if (toggled) run <= 0;
+		  if (!step) toggled <= 0;
+	 end
+	 
     // internal connections
     wire [3:0] alive_col0, alive_col1, alive_col2, alive_col3;
 	 
-	assign alive = {alive_col3,alive_col2,alive_col1,alive_col0};
+	 assign alive = {alive_col3,alive_col2,alive_col1,alive_col0};
 	 
 
     life_col4 COL0 (.clk(clk), .reset(reset), .n(n[0]), .ne(n[1]), .e_col(alive_col1),

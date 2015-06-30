@@ -33,23 +33,16 @@ module life_array_4x4(input clk,
 		      );
 
 
-	 reg run;
-	 reg toggled;
+    // toggle
+	 wire run;
+	 reg toggle;
+	 
+	 assign run = step & ~toggle;
 	 
 	 always @(posedge clk) begin
-	     if(reset) begin
-		      toggled <= 0;
-				run <= 0;
-				end
-		  else begin
-	         if (step & ~toggled) begin
-		          run <= 1;
-				    toggled <= 1;
-		      end
-		      if (toggled) run <= 0;
-		      if (!step) toggled <= 0;
-		  end
-	 end
+	     if(reset) toggle <= 0;
+		  else toggle <= step;
+    end
 	 
     // internal connections
     wire [3:0] alive_col0, alive_col1, alive_col2, alive_col3;

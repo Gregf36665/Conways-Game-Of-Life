@@ -39,8 +39,6 @@ module Cell_test;
 	reg write;
 	reg val;
 	reg enb;
-	reg scan;
-	reg scan_val;
 	
   reg expected_alive;
 	
@@ -62,8 +60,6 @@ module Cell_test;
 		.write(write), 
 		.val(val), 
 		.enb(enb), 
-		.scan(scan),
-		.scan_val(scan_val),
 		.alive(alive)
 	);
 
@@ -86,8 +82,6 @@ module Cell_test;
 		write = 0;
 		val = 0;
 		enb = 0;
-		scan = 0;
-		scan_val = 0;
 
 		// Wait 11 ns for global reset to finish
 		#11;
@@ -183,38 +177,6 @@ module Cell_test;
          $stop;
       end
 		
-		// test scan
-		scan_val = 1;
-		#10;
-		scan = 1;
-		#10;
-		expected_alive = 1;
-		if(expected_alive != alive) begin
-         $display("Scan failed");     
-         $stop;
-      end
-		
-		scan_val = 0;
-		#10
-		expected_alive = 0;
-		if(expected_alive != alive) begin
-         $display("Scan failed");     
-         $stop;
-      end
-		
-		scan = 0;
-		scan_val = 1;
-		
-		#10;
-		expected_alive = 0;
-		if(expected_alive != alive) begin
-         $display("Scan should be disabled");     
-         $stop;
-      end
-		#20;
-		$display("Good run");
-		$stop;
-
 	end
       
 endmodule

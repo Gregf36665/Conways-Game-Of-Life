@@ -41,6 +41,7 @@ module life_array_4x4(input clk,
 	 
 	 always @(posedge clk) begin
 	     if(reset) toggle <= 0;
+		  else if(write_enb) toggle <= 0;
 		  else toggle <= step;
     end
 	 

@@ -44,6 +44,8 @@ module Column_test;
 
 	// Outputs
 	wire [3:0] alive_col;
+	wire [3:0] alive_prev_col;
+    
 
 	// Instantiate the Unit Under Test (UUT)
 	life_col4 uut (
@@ -60,6 +62,7 @@ module Column_test;
 		.write_enb(write_enb), 
 		.val(val), 
 		.alive_col(alive_col), 
+        .alive_prev_col(alive_prev_col),
 		.enable(enable)
 	);
 
@@ -154,6 +157,42 @@ module Column_test;
          $stop;
       end
 		
+        
+        // test previous state
+        
+        write_enb = 0;
+        reset = 1;
+        #10;
+        expected_alive = 4'b0;
+		if(expected_alive != alive_prev_col) begin
+            $display("Error with reset for alive previous!");        
+            $stop;
+        end
+        reset = 0;
+        e_col = 4'b0111;
+        enable = 1;
+        #10;
+        e_col = 4'b0;
+        expected_alive = 4'b0010;
+		if(expected_alive != alive_col) begin
+            $display("Error with logical spawn for alive!");        
+            $stop;
+        end
+        #10;
+        expected_alive = 4'b0010;
+		if(expected_alive != alive_prev_col) begin
+            $display("Error with logical spawn for alive previous!");        
+            $stop;
+        end
+        #10;
+        expected_alive = 4'b0000;
+		if(expected_alive != alive_prev_col) begin
+            $display("Error with death for alive previous!");        
+            $stop;
+        end
+
+        
+        $display("All tests pass");
 		$stop;
 		
 

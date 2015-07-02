@@ -29,8 +29,9 @@ module Controller(
     
     parameter DEFAULT=3'd0, WRITE_TL=3'd1, WRITE_BL=3'd2,WRITE_TR=3'd3, WRITE_BR=3'd4;
     
-    reg [2:0] state, next;
+    reg [2:0] state, next, enb;
     
+        
     always @(posedge clk)
         if (reset) state <= DEFAULT;
         else state <= next;
@@ -52,29 +53,29 @@ module Controller(
         endcase
     end
     
-    // this is configured to create a block in the center of the screen
+    // this is configured to create a maze in the center of the screen
     always @(posedge clk) begin
         case(next)
             DEFAULT:
                 write_enb <= 0;
             WRITE_TL: begin
                 pos <= 2'b00;
-                val <= 16'h8000;
+                val <= 16'h6E88;
                 write_enb <= 1;
             end
             WRITE_BL: begin
                 pos <= 2'b01;
-                val <= 16'h1000;
+                val <= 16'h0000;
                 write_enb <= 1;
             end
             WRITE_TR: begin
                 pos <= 2'b10;
-                val <= 16'h0008;
+                val <= 16'h0886;
                 write_enb <= 1;
             end
             WRITE_BR: begin
                 pos <= 2'b11;
-                val <= 16'h0001;
+                val <= 16'h033E;
                 write_enb <= 1;
             end
         endcase

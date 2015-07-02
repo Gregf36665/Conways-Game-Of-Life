@@ -56,6 +56,12 @@ module Top(
     
     Display U_DISPLAY (.x(x), .y(y), .alive(alive_vga), .rgb(rgb), .array_pos(vga_array_pos));
     
+    Timer  #(.COUNT_MAX(100000000))  U_1_SEC (.clk(clk),
+                                        .trigger(trigger)
+                                        );
+                                        
+    assign step = enb & trigger;
+    
                     
     
     life_array_8x8 U_8x8_ARRAY(
@@ -66,7 +72,7 @@ module Top(
                     .valo_selector(vga_array_pos),
                     .vali_selector(array_in_selector),
                     .write_enb(write_enb),
-                    .step(enb),
+                    .step(step),
                     .n(8'b0),
                     .e(8'b0),
                     .s(8'b0),

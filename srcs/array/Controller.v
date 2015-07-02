@@ -1,68 +1,85 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: Lafayette College
-// Engineer: Greg Flynn
+// Company: 
+// Engineer: 
 // 
-// Create Date: 06/24/2015 04:36:50 PM
+// Create Date:    09:47:32 07/02/2015 
 // Design Name: 
-// Module Name: Controller
-// Project Name:
+// Module Name:    Controller 
+// Project Name: 
 // Target Devices: 
-// Tool Versions: 
+// Tool versions: 
 // Description: 
-// 
+//
 // Dependencies: 
-// 
-// Revision:
+//
+// Revision: 
 // Revision 0.01 - File Created
-// Additional Comments:
-// In the end this should be moved into the PS
+// Additional Comments: 
+//
 //////////////////////////////////////////////////////////////////////////////////
-
-
 module Controller(
     input clk,
-	input reset,
-    output write_array,
-    output run,
-    output [1:0] pos,
-    output write_mem
+    input reset,
+    input debug,
+    output reg [1:0] pos,
+    output reg [15:0] val,
+    output reg write_enb
     );
     
-    parameter DELAY = 99999999; // set the pause time for the enable signal
-                                // default 1 clk cycle less than 1 sec
+    parameter DEFAULT=3'd0, WRITE_TL=3'd1, WRITE_BL=3'd2,WRITE_TR=3'd3, WRITE_BR=3'd4;
     
-    reg [3:0] state;
-    reg run_output_enb;
-    reg [31:0] timer;
+    reg [2:0] state, next;
     
-    assign pos = state[3:2];
-    
-    assign write_array = state[1:0] == 2'b01;
-    assign run       =   (state[1:0] == 2'b10) & run_output_enb;
-    assign write_mem =   state[1:0] == 2'b11;
-    
-    always @(posedge clk) begin
-        if(reset) state <= 0;
-		else state <= state + 1;
+    always @(posedge clk)
+        if (reset) state <= DEFAULT;
+        else state <= next;
+        
+    always @* begin
+        next = DEFAULT; // in an error go to default state
+        case(state)
+            DEFAULT:
+                if(debug) next = WRITE_TL;
+                else next = DEFAULT;
+            WRITE_TL:
+                next = WRITE_BL;
+            WRITE_BL:
+                next = WRITE_TR;
+            WRITE_TR:
+                next = WRITE_BR;
+            WRITE_BR:
+                next = DEFAULT;
+        endcase
     end
     
-    // Pulse for running simulator
-    always @(posedge clk)
-        if (reset) begin
-            timer <= 0;
-            run_output_enb <= 0;
-        end
-        else begin
-				if(timer == (DELAY + 16) )  begin
-                timer <= 0;
-                run_output_enb <= 0;
+    // this is configured to create a block in the center of the screen
+    always @(posedge clk) begin
+        case(next)
+            DEFAULT:
+                write_enb <= 0;
+            WRITE_TL: begin
+                pos <= 2'b00;
+                val <= 16'h8000;
+                write_enb <= 1;
             end
-				else if(timer >= DELAY) begin
-                run_output_enb <= 1;
-                timer <= timer + 1;
+            WRITE_BL: begin
+                pos <= 2'b01;
+                val <= 16'h1000;
+                write_enb <= 1;
             end
-            else timer <= timer + 1;
-        end
+            WRITE_TR: begin
+                pos <= 2'b10;
+                val <= 16'h0008;
+                write_enb <= 1;
+            end
+            WRITE_BR: begin
+                pos <= 2'b11;
+                val <= 16'h0001;
+                write_enb <= 1;
+            end
+        endcase
+    end
     
+
+
 endmodule

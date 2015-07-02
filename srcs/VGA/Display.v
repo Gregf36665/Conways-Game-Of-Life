@@ -33,7 +33,6 @@ module Display(
               JUST_ALIVE = 2'b01, ALIVE = 2'b11;
               
     wire [3:0] pos;
-    wire draw;
     reg [11:0] color;
     
     assign array_pos = {x[9] , y[9]};
@@ -47,7 +46,7 @@ module Display(
     
     assign out_of_range = x[10] == 1'b1 || y[10] == 1'b1;
     
-    assign rgb = draw & ~out_of_range ? color : 0;
+    assign rgb = ~out_of_range ? color : 0;
     
     // Color coded cells based on previous lives
     always @*

@@ -35,21 +35,21 @@ module Conway_Sim;
     endtask
             
     reg clk = 1;
-    wire [15:0] alive;
+    wire [15:0] alive, alive_prev;
     reg reset = 0;
     reg [15:0] val;
     reg write_enb;
     reg step = 0;
-	 reg scan = 0;
-	 reg [3:0] n = 4'b0,
-				  e = 4'b0,
-				  s = 4'b0,
-				  w = 4'b0;
+    reg scan = 0;
+    reg [3:0] n = 4'b0,
+			  e = 4'b0,
+			  s = 4'b0,
+			  w = 4'b0;
 				  
 	 reg nw = 0,
-		  ne = 0,
-		  se = 0,
-		  sw = 0;
+         ne = 0,
+		 se = 0,
+		 sw = 0;
 	 
     reg [15:0] expected_alive;
     
@@ -58,27 +58,28 @@ module Conway_Sim;
     life_array_4x4 arr (.clk(clk),
                         .reset(reset),
                         .alive(alive),
+                        .alive_prev(alive_prev),
                         .val(val),
                         .write_enb(write_enb),
                         .step(step),
-								.n(n),
-								.e(e),
-								.s(s),
-								.w(w),
-								.nw(nw),
-								.ne(ne),
-								.se(se),
-								.sw(sw)
+						.n(n),
+						.e(e),
+						.s(s),
+						.w(w),
+						.nw(nw),
+						.ne(ne),
+						.se(se),
+						.sw(sw)
                         );
 								
     initial begin
-	   // reset everything
-      reset = 1;
-      #10;
-      reset = 0;
-      #11;
+        // reset everything
+        reset = 1;
+        #10;
+        reset = 0;
+        #11;
 		
-		// write to the top left cell only
+        // write to the top left cell only
 		val = 16'h0001;
 		expected_alive = 16'h0001;
 		#10;
@@ -281,14 +282,13 @@ module Conway_Sim;
 		    $display("Toad failed to blink");
 		    $stop;
 		end
-		
-		#10;
+        #10;
 		// test step (nothing should have changed)
 		if(expected_alive != alive) begin
 		    $display("Cell went to next generation when it shouldn't have");
 		    $stop;
 		end
-
+        
 		$display("Toad passed");
 		
 		$display("Testing edges");
@@ -311,6 +311,17 @@ module Conway_Sim;
 		expected_alive = 4'h0001;
 		if(expected_alive != alive) begin
 		    $display("Top left cell failed to come to life!");
+		    $stop;
+		end
+        expected_alive = 4'h0000;
+		if(expected_alive != alive_prev) begin
+		    $display("Alive previous should be at 0!");
+		    $stop;
+		end
+        #10;
+        expected_alive = 4'h0001;
+		if(expected_alive != alive_prev) begin
+		    $display("Alive previous should be at 1!");
 		    $stop;
 		end
 		$display("Edge passed");

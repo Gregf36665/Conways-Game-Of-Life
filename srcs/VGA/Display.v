@@ -24,10 +24,14 @@ module Display(
     input [10:0] x,
     input [10:0] y,
     input [15:0] alive,
+    input [15:0] alive_prev,
     output [11:0] rgb,
     output [1:0] array_pos
     );
     
+    parameter DEAD = 2'b00, JUST_DEAD = 2'b10,
+              JUST_ALIVE = 2'b01, ALIVE = 2'b11;
+              
     wire [3:0] pos;
     wire draw;
     wire [11:0] color;
@@ -38,15 +42,26 @@ module Display(
     assign pos[3:2] = x[8:7];
     
                          
-    assign draw = alive[pos[3:0]];
+    assign is_alive = alive[pos[3:0]];
+    assign was_alive = alive_prev[pos[3:0]];
     
     assign out_of_range = x[10] == 1'b1 || y[10] == 1'b1;
     
     assign rgb = draw & ~out_of_range ? color : 0;
     
-    // Just to get some patterns
-    assign color[11:8] = {4{( x[9] | ~y[9])} };
-    assign color[7:4] =  {4{(~x[9] |  y[9])} };
-    assign color[3:0] =  {4{( x[9] &  y[9])} };
+    // Color coded cells based on previous lives
+    always @*
+        case({was_alive,is_alive})
+            DEAD:
+                color = 12'h000;
+            JUST_DEAD:
+                color = 12'hF00;
+            JUST_ALIVE:
+                color = 12'hFF0;
+            ALIVE:
+                color = 12'h0F0;
+        endcase
+        
+            
     
 endmodule

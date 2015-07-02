@@ -26,7 +26,8 @@ module Display(
     input [15:0] alive,
     input [15:0] alive_prev,
     output [11:0] rgb,
-    output [1:0] array_pos
+    output [1:0] array_pos,
+    input color_enb
     );
     
     parameter DEAD = 2'b00, JUST_DEAD = 2'b10,
@@ -49,18 +50,21 @@ module Display(
     assign rgb = ~out_of_range ? color : 0;
     
     // Color coded cells based on previous lives
-    always @*
-        case({was_alive,is_alive})
-            DEAD:
-                color = 12'h000;
-            JUST_DEAD:
-                color = 12'hF00;
-            JUST_ALIVE:
-                color = 12'hFF0;
-            ALIVE:
-                color = 12'h0F0;
-        endcase
-        
+    always @* begin
+        if (color_enb)
+            case({was_alive,is_alive})
+                DEAD:
+                    color = 12'h000;
+                JUST_DEAD:
+                    color = 12'hF00;
+                JUST_ALIVE:
+                    color = 12'hFF0;
+                ALIVE:
+                    color = 12'h0F0;
+            endcase
+        else
+            color = is_alive? 12'hFFF : 12'h000;
+    end
             
     
 endmodule

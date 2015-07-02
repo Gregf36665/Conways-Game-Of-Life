@@ -30,7 +30,8 @@ module Top(
     output [3:0] blue,
     input debug,
     input enb,
-    output[3:0] leds
+    output[3:0] leds,
+    input color_enb
     );
     
     wire [10:0] y;
@@ -55,7 +56,7 @@ module Top(
     
     
     Display U_DISPLAY (.x(x), .y(y), .alive(alive_vga), .alive_prev(alive_prev_vga),
-                       .rgb(rgb), .array_pos(vga_array_pos));
+                       .rgb(rgb), .array_pos(vga_array_pos), .color_enb(color_enb));
     
     Timer  #(.COUNT_MAX(100000000))  U_1_SEC (.clk(clk),
                                               .trigger(trigger)

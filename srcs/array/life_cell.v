@@ -36,6 +36,7 @@ module life_cell(input clk,
 
     wire [3:0] 		neighbor_count;
     reg 				alive_next;
+    reg                 alive_next_prev; // this is the next value of the previous state
 
     assign 		neighbor_count = n + ne + e + se + s + sw + w + nw;
 
@@ -51,19 +52,23 @@ module life_cell(input clk,
 			
 		else begin
             alive <= alive_next;
-            alive_prev <= alive;
+            alive_prev <= alive_next_prev;
         end
 	end
 	
 	always @* begin
 		if (enb) begin
+		        alive_next_prev = alive;
 				if (alive)
 					if (neighbor_count < 2 || neighbor_count > 3 ) alive_next = 0;
 					else alive_next = 1;
 				else if (neighbor_count == 3) alive_next = 1;
 				else alive_next = 0;
 		end
-		else alive_next = alive;
+		else begin
+		    alive_next = alive;
+		    alive_next_prev = alive_prev;
+		end
 	end
 
 endmodule // life_cell

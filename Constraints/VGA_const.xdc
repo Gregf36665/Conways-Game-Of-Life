@@ -11,6 +11,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports leds]
 
 set_property IOSTANDARD LVCMOS25 [get_ports debug]
 set_property IOSTANDARD LVCMOS25 [get_ports enb]
+set_property IOSTANDARD LVCMOS25 [get_ports color_enb]
 set_property IOSTANDARD LVCMOS25 [get_ports reset]
 
 set_property PACKAGE_PIN V20 [get_ports {red[3]}]
@@ -31,6 +32,7 @@ set_property PACKAGE_PIN Y19 [get_ports {Vsync}]
 
 set_property PACKAGE_PIN H19 [get_ports {debug}]
 set_property PACKAGE_PIN F22 [get_ports {enb}]
+set_property PACKAGE_PIN G22 [get_ports {color_enb}]
 set_property PACKAGE_PIN P16 [get_ports {reset}]
 
 set_property PACKAGE_PIN U14 [get_ports {leds[3]}]

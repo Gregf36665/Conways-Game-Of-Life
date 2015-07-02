@@ -30,7 +30,8 @@ module life_cell(input clk,
                         write, // enable writing
                         val, // to set the cell to a certain value
                         enb, // enable the cell to come to life
-		                output reg alive
+		                output reg alive,
+                        output reg alive_prev
 		                );
 
     wire [3:0] 		neighbor_count;
@@ -41,12 +42,17 @@ module life_cell(input clk,
     always @(posedge clk) begin 
 		if (write) begin
 				alive <= val;
+                alive_prev <= val;
 				end
 		else if (reset) begin
 				alive <= 0;
+                alive_prev <= 0;
 				end
 			
-		else alive <= alive_next;
+		else begin
+            alive <= alive_next;
+            alive_prev <= alive;
+        end
 	end
 	
 	always @* begin

@@ -40,10 +40,11 @@ module Cell_test;
 	reg val;
 	reg enb;
 	
-  reg expected_alive;
+    reg expected_alive;
 	
 	// Outputs
 	wire alive;
+    wire alive_prev;
 
 	// Instantiate the Unit Under Test (UUT)
 	life_cell uut (
@@ -60,7 +61,8 @@ module Cell_test;
 		.write(write), 
 		.val(val), 
 		.enb(enb), 
-		.alive(alive)
+		.alive(alive),
+        .alive_prev(alive_prev)
 	);
 
 	always begin
@@ -176,8 +178,48 @@ module Cell_test;
          $display("Cell failed to die");
          $stop;
       end
-		
+	
+    
+        // test alive_prev
+        reset = 1;
+        enb = 0;
+        #10;
+        reset = 0;
+        #10;
+        expected_alive = 0;
+        if(expected_alive != alive_prev) begin
+            $display("Alive previous failed to reset");
+            $stop;
+        end
+        
+        // bring the cell to life
+        #10;
+        n = 1;
+        e = 1;
+        s = 1;
+        #10;
+        enb = 1;
+        #10;
+        expected_alive = 0;
+        if(expected_alive != alive_prev) begin
+            $display("Alive previous failed to maintain 0");
+            $stop;
+        end
+        #10;
+        expected_alive = 1;
+        if(expected_alive != alive_prev) begin
+            $display("Alive previous failed to update");
+            $stop;
+        end
+        
+      
+	
+        
+        $display("All tests passed");
+        $stop;
 	end
+    
+
       
 endmodule
 

@@ -61,11 +61,11 @@ module Top(
     life_array_8x8 U_8x8_ARRAY(
                     .clk(clk),
                     .reset(reset),
-                    .vali(value),
+                    .vali(val),
                     .valo(alive_vga),
                     .valo_selector(vga_array_pos),
                     .vali_selector(array_in_selector),
-                    .write_enb(write),
+                    .write_enb(write_enb),
                     .step(enb),
                     .n(8'b0),
                     .e(8'b0),
@@ -82,7 +82,7 @@ module Top(
                     .reset(reset), 
                     .debug(debug), 
                     .pos(array_in_selector), 
-                    .val(value), 
+                    .val(val), 
                     .write_enb(write_enb)
                     );
 	 

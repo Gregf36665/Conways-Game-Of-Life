@@ -58,11 +58,13 @@ module Top(
     
                     
     
-    life_array_8x8 (.clk(clk),
+    life_array_8x8 U_8x8_ARRAY(
+                    .clk(clk),
                     .reset(reset),
                     .vali(value),
                     .valo(alive_vga),
                     .valo_selector(vga_array_pos),
+                    .vali_selector(array_in_selector),
                     .write_enb(write),
                     .step(enb),
                     .n(8'b0),
@@ -73,6 +75,15 @@ module Top(
                     .ne(1'b0),
                     .se(1'b0),
                     .sw(1'b0)
+                    );
+                    
+    Controller U_CONTROLLER (
+                    .clk(clk), 
+                    .reset(reset), 
+                    .debug(debug), 
+                    .pos(array_in_selector), 
+                    .val(value), 
+                    .write_enb(write_enb)
                     );
 	 
 endmodule

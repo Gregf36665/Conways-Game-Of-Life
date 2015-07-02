@@ -34,7 +34,7 @@ module Display(
               
     wire [3:0] pos;
     wire draw;
-    wire [11:0] color;
+    reg [11:0] color;
     
     assign array_pos = {x[9] , y[9]};
     

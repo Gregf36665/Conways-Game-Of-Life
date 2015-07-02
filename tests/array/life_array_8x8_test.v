@@ -42,7 +42,7 @@ module life_array_8x8_test;
 	reg step;
 
 	// Outputs
-	wire [15:0] valo;
+	wire [15:0] valo, valo_prev;
     
     // Expected value
     reg [15:0] expected_alive = 16'h0000;
@@ -53,6 +53,7 @@ module life_array_8x8_test;
 		.reset(reset), 
 		.vali(vali), 
 		.valo(valo), 
+        .valo_prev(valo_prev),
 		.vali_selector(vali_selector), 
 		.valo_selector(valo_selector), 
 		.write_enb(write_enb), 
@@ -205,7 +206,55 @@ module life_array_8x8_test;
 		    $stop;
 		end
         
+        // reset
+        #10;
+        reset = 1;
+        step = 0;
+        #10;
+        reset = 0;
         
+        // Test previous value
+        $display("Testing previous values");
+        vali = 16'h0025;
+        vali_selector = 2'b00;
+        valo_selector = 2'b00;
+        write_enb = 1;
+        #10;
+        write_enb = 0;
+        #10;
+        expected_alive = 16'h0025;
+        if(expected_alive != valo_prev) begin
+		    $display("Previous value failed to be set during write");
+		    $stop;
+		end
+        step = 1;
+        #10;
+        expected_alive = 16'h0025;
+        if(expected_alive != valo_prev) begin
+		    $display("Previous value failed to stay the same");
+		    $stop;
+		end
+        step = 0;
+        #10;
+        step = 1;
+        #10;
+        expected_alive = 16'h0022;
+        if(expected_alive != valo_prev) begin
+		    $display("Previous value failed to update");
+		    $stop;
+		end
+        step = 0;
+        #10;
+        step = 1;
+        #10;
+        expected_alive = 16'h0000;
+        if(expected_alive != valo_prev) begin
+		    $display("Previous value failed to die");
+		    $stop;
+		end
+        step = 0;
+        
+        $display("All tests passed");
         $stop;
         
         

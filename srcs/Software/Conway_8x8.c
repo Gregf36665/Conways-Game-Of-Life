@@ -21,30 +21,29 @@ u32 pos = 0b00;
 u32 write = 1;
 u32 clk = 0;
 
-void writeout();
+void writeout(u16 val, u32 pos);
 void delay();
 
 int main(void){
+
 	while(1){
 		// enter loop
 		loop:
 			switch(pos){
-				case 0b00: val = 0x2070; break;
-				case 0b01: val = 0x2664; break;
-				case 0b10: val = 0x0822; break;
-				case 0b11: val = 0xDC00; break;
+				case 0b00: val = 0X6E88; break;
+				case 0b01: val = 0x0000; break;
+				case 0b10: val = 0x0886; break;
+				case 0b11: val = 0x033E; break;
 				default: val = 0x0000; break;
 			}
-			delay();
-			writeout();
-			delay();
+			writeout(val,pos);
 			pos += 1;
-			delay();
 			if (pos == 4) goto done;
 			else goto loop;
 		done:
 			pos = 0;
 	}
+
 
 
 
@@ -59,16 +58,21 @@ int main(void){
 void delay(){
 	clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
 	if(clk == 0) while (clk == 0) clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
-	while (clk==1) clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
+	while (clk==1){
+		clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
+	}
 	// negative edge
 }
 
 /**
- * Update the value of the position, value and write out registers
+ * Update the value of the position and value registers
+ * Note this pulses the write out pin
  */
-void writeout(){
+void writeout(u16 val, u32 pos){
 	CONTROLLER_4X4_mWriteReg(BASE,VAL,val);
 	CONTROLLER_4X4_mWriteReg(BASE,POS,pos);
-	CONTROLLER_4X4_mWriteReg(BASE,WRITE,write);
+	CONTROLLER_4X4_mWriteReg(BASE,WRITE,1);
+	delay();
+	CONTROLLER_4X4_mWriteReg(BASE,WRITE,0);
 	return;
 }

@@ -102,7 +102,7 @@
         .green(green),
         .blue(blue),
         .enb(enb),
-        .write_enb(write_enb_soft),
+        .write_enb(write),
         .val(val),
         .pos(pos),
         .color_enb(1'b0)	           

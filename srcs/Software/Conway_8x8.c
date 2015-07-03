@@ -22,9 +22,28 @@ u32 write = 1;
 u32 clk = 0;
 
 void writeout();
+void delay();
+
 int main(void){
-	while(1){// enter loop
-		writeout();
+	while(1){
+		// enter loop
+		loop:
+			switch(pos){
+				case 0b00: val = 0x2070; break;
+				case 0b01: val = 0x2664; break;
+				case 0b10: val = 0x0822; break;
+				case 0b11: val = 0xDC00; break;
+				default: val = 0x0000; break;
+			}
+			delay();
+			writeout();
+			delay();
+			pos += 1;
+			delay();
+			if (pos == 4) goto done;
+			else goto loop;
+		done:
+			pos = 0;
 	}
 
 
@@ -32,6 +51,21 @@ int main(void){
 	return 1;
 }
 
+
+
+/**
+ * Waits for the negative edge of the clock
+ */
+void delay(){
+	clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
+	if(clk == 0) while (clk == 0) clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
+	while (clk==1) clk = CONTROLLER_4X4_mReadReg(BASE,CLK);
+	// negative edge
+}
+
+/**
+ * Update the value of the position, value and write out registers
+ */
 void writeout(){
 	CONTROLLER_4X4_mWriteReg(BASE,VAL,val);
 	CONTROLLER_4X4_mWriteReg(BASE,POS,pos);

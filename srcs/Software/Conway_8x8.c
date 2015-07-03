@@ -16,19 +16,25 @@
 #define WRITE CONTROLLER_4X4_S00_AXI_SLV_REG2_OFFSET
 #define CLK CONTROLLER_4X4_S00_AXI_SLV_REG3_OFFSET
 
+u16 val = 0x0070;
+u32 pos = 0b00;
+u32 write = 1;
+u32 clk = 0;
+
+void writeout();
 int main(void){
-	// Setup everything
-	u16 val = 0x0700;
-	u32 pos = 0b00;
-	u32 write = 1;
-	u32 clk = 0;
 	while(1){// enter loop
-		CONTROLLER_4X4_mWriteReg(BASE,VAL,val);
-		CONTROLLER_4X4_mWriteReg(BASE,POS,pos);
-		CONTROLLER_4X4_mWriteReg(BASE,WRITE,write);
+		writeout();
 	}
 
 
 
 	return 1;
+}
+
+void writeout(){
+	CONTROLLER_4X4_mWriteReg(BASE,VAL,val);
+	CONTROLLER_4X4_mWriteReg(BASE,POS,pos);
+	CONTROLLER_4X4_mWriteReg(BASE,WRITE,write);
+	return;
 }

@@ -18,14 +18,15 @@
 
 int main(void){
 	// Setup everything
-	u32 val = 0xFFFF;
+	u16 val = 0x0700;
 	u32 pos = 0b00;
 	u32 write = 1;
 	u32 clk = 0;
-	CONTROLLER_4X4_mWriteReg(BASE,VAL,val);
-	CONTROLLER_4X4_mWriteReg(BASE,POS,pos);
-	CONTROLLER_4X4_mWriteReg(BASE,WRITE,write);
-	while(1);// enter loop
+	while(1){// enter loop
+		CONTROLLER_4X4_mWriteReg(BASE,VAL,val);
+		CONTROLLER_4X4_mWriteReg(BASE,POS,pos);
+		CONTROLLER_4X4_mWriteReg(BASE,WRITE,write);
+	}
 
 
 

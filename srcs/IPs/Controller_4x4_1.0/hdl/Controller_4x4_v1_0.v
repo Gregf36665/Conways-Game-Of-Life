@@ -91,6 +91,7 @@
 
 	// Add user logic here
 	
+	assign write = write_enb & write_enb_soft;
 	
 	Top U_TOP (
 	    .clk(clk),

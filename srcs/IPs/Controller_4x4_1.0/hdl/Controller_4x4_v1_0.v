@@ -105,7 +105,7 @@
         .write_enb(write),
         .val(val),
         .pos(pos),
-        .color_enb(1'b0)	           
+        .color_enb(color_enb)	           
 	    );
 
 	// User logic ends

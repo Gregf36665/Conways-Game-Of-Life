@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER Controller_4x4
+	OPTION supported_peripherals = (Controller_4x4);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = Controller_4x4;
+END DRIVER

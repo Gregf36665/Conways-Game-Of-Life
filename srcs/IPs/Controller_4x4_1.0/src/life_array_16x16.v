@@ -29,7 +29,9 @@ module life_array_16x16(
     output [15:0] valo,
     output [15:0] valo_prev,
     input [15:0] ni,ei,si,wi,
-    input nw,ne,se,sw
+    input nw,ne,se,sw,
+    output [31:0] no, eo, so, wo,
+    output nwo, neo, seo, swo
     );
     
     // edge inputs into the tiles
@@ -43,6 +45,49 @@ module life_array_16x16(
     wire [7:0] tile_1_No, tile_1_Eo, tile_1_So, tile_1_Wo;
     wire [7:0] tile_2_No, tile_2_Eo, tile_2_So, tile_2_Wo;
     wire [7:0] tile_3_No, tile_3_Eo, tile_3_So, tile_3_Wo;
+    
+    // diagonal inputs
+    wire tile_0_NWi = nwi,
+         tile_0_NEi = ni[8],
+         tile_0_SEi = tile_3_NWo,
+         tile_0_SWi = wi[8];
+         
+    wire tile_1_NWi = wi[7],
+         tile_1_NEi = tile_2_SWo,
+         tile_1_SEi = si[8],
+         tile_1_SWi = swi;
+         
+    wire tile_2_NWi = ni[7],
+         tile_2_NEi = nei,
+         tile_2_SEi = ei[8],
+         tile_2_SWi = tile_1_NEo;
+         
+    wire tile_3_NWi = tile_0_SEo,
+         tile_3_NEi = ei[7],
+         tile_3_SEi = se,
+         tile_3_SWi = si[7];
+         
+    // diagonal outputs
+    wire tile_0_NWo,
+         tile_0_NEo,
+         tile_0_SEo,
+         tile_0_SWo;
+         
+    wire tile_1_NWo,
+         tile_1_NEo,
+         tile_1_SEo,
+         tile_1_SWo;
+         
+    wire tile_2_NWo,
+         tile_2_NEo,
+         tile_2_SEo,
+         tile_2_SWo;
+         
+    wire tile_3_NWo,
+         tile_3_NEo,
+         tile_3_SEo,
+         tile_3_SWo;
+         
     
     assign tile_0_Ni = ni[7:0];
     assign tile_0_Ei = tile_2_Wo;
@@ -65,6 +110,8 @@ module life_array_16x16(
     assign tile_3_Wi = tile_1_Eo;
     
     
+    
+    
     life_array_8x8 U_8x8_0 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
@@ -78,7 +125,15 @@ module life_array_16x16(
                             .no(tile_0_No),
                             .eo(tile_0_Eo),
                             .so(tile_0_So),
-                            .wo(tile_0_Wo)
+                            .wo(tile_0_Wo),
+                            .nwi(tile_0_NWi),
+                            .nei(tile_0_NEi),
+                            .sei(tile_0_SEi),
+                            .swi(tile_0_SWi),
+                            .nwo(tile_0_NWo),
+                            .neo(tile_0_NEo),
+                            .seo(tile_0_SEo),
+                            .swo(tile_0_SWo)
                             );
     
     life_array_8x8 U_8x8_1 (.clk(clk),
@@ -94,7 +149,15 @@ module life_array_16x16(
                             .no(tile_1_No),
                             .eo(tile_1_Eo),
                             .so(tile_1_So),
-                            .wo(tile_1_Wo)
+                            .wo(tile_1_Wo),
+                            .nwi(tile_1_NWi),
+                            .nei(tile_1_NEi),
+                            .sei(tile_1_SEi),
+                            .swi(tile_1_SWi),
+                            .nwo(tile_1_NWo),
+                            .neo(tile_1_NEo),
+                            .seo(tile_1_SEo),
+                            .swo(tile_1_SWo)
                             );
     
     life_array_8x8 U_8x8_2 (.clk(clk),
@@ -110,7 +173,15 @@ module life_array_16x16(
                             .no(tile_2_No),
                             .eo(tile_2_Eo),
                             .so(tile_2_So),
-                            .wo(tile_2_Wo)
+                            .wo(tile_2_Wo),
+                            .nwi(tile_2_NWi),
+                            .nei(tile_2_NEi),
+                            .sei(tile_2_SEi),
+                            .swi(tile_2_SWi),
+                            .nwo(tile_2_NWo),
+                            .neo(tile_2_NEo),
+                            .seo(tile_2_SEo),
+                            .swo(tile_2_SWo)
                             );
     
     life_array_8x8 U_8x8_3 (.clk(clk),
@@ -126,7 +197,15 @@ module life_array_16x16(
                             .no(tile_3_No),
                             .eo(tile_3_Eo),
                             .so(tile_3_So),
-                            .wo(tile_3_Wo)
+                            .wo(tile_3_Wo),
+                            .nwi(tile_3_NWi),
+                            .nei(tile_3_NEi),
+                            .sei(tile_3_SEi),
+                            .swi(tile_3_SWi),
+                            .nwo(tile_3_NWo),
+                            .neo(tile_3_NEo),
+                            .seo(tile_3_SEo),
+                            .swo(tile_3_SWo)
                             );
     
 

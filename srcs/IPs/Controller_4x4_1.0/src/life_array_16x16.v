@@ -74,7 +74,11 @@ module life_array_16x16(
                             .ni(tile_0_Ni),
                             .ei(tile_0_Ei),
                             .si(tile_0_Si),
-                            .wi(tile_0_Wi)
+                            .wi(tile_0_Wi),
+                            .no(tile_0_No),
+                            .eo(tile_0_Eo),
+                            .so(tile_0_So),
+                            .wo(tile_0_Wo)
                             );
     
     life_array_8x8 U_8x8_1 (.clk(clk),
@@ -86,7 +90,11 @@ module life_array_16x16(
                             .ni(tile_1_Ni),
                             .ei(tile_1_Ei),
                             .si(tile_1_Si),
-                            .wi(tile_1_Wi)
+                            .wi(tile_1_Wi),
+                            .no(tile_1_No),
+                            .eo(tile_1_Eo),
+                            .so(tile_1_So),
+                            .wo(tile_1_Wo)
                             );
     
     life_array_8x8 U_8x8_2 (.clk(clk),
@@ -98,7 +106,11 @@ module life_array_16x16(
                             .ni(tile_2_Ni),
                             .ei(tile_2_Ei),
                             .si(tile_2_Si),
-                            .wi(tile_2_Wi)
+                            .wi(tile_2_Wi),
+                            .no(tile_2_No),
+                            .eo(tile_2_Eo),
+                            .so(tile_2_So),
+                            .wo(tile_2_Wo)
                             );
     
     life_array_8x8 U_8x8_3 (.clk(clk),
@@ -110,7 +122,11 @@ module life_array_16x16(
                             .ni(tile_3_Ni),
                             .ei(tile_3_Ei),
                             .si(tile_3_Si),
-                            .wi(tile_3_Wi)
+                            .wi(tile_3_Wi),
+                            .no(tile_3_No),
+                            .eo(tile_3_Eo),
+                            .so(tile_3_So),
+                            .wo(tile_3_Wo)
                             );
     
 

@@ -302,6 +302,58 @@ module life_array_8x8_test;
 		    $stop;
 		end
         
+        $display("Corner edges passed");
+        
+        nw = 0;
+        ne = 0;
+        se = 0;
+        sw = 0;
+        n = 8'h3C;
+        e = 8'h3C;
+        s = 8'h3C;
+        w = 8'h3C;
+        step = 0;
+        reset = 1;
+        #10;
+        reset = 0;
+        #10;
+        
+        $display("Testing middle of edges");
+        step = 1;
+        #10;
+        #10;
+        expected_alive = 16'h1008;
+        valo_selector = 2'b00;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Tile 0 failed to spawn correctly");
+		    $stop;
+		end
+        #10;
+        expected_alive = 16'h8001;
+        valo_selector = 2'b01;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Tile 1 failed to spawn correctly");
+		    $stop;
+		end
+        #10;
+        expected_alive = 16'h8001;
+        valo_selector = 2'b10;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Tile 2 failed to spawn correctly");
+		    $stop;
+		end
+        #10;
+        expected_alive = 16'h1008;
+        valo_selector = 2'b11;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Tile 3 failed to spawn correctly");
+		    $stop;
+		end
+        
         
         
         $display("All tests passed");

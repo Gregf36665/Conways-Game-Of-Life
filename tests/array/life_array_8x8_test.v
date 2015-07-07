@@ -254,6 +254,56 @@ module life_array_8x8_test;
 		end
         step = 0;
         
+        $display("Testing edges");
+        reset = 1;
+        step = 0;
+        #10;
+        reset = 0;
+        ne = 1;
+        se = 1;
+        sw = 1;
+        nw = 1;
+        n = 8'h81;
+        e = 8'h81;
+        s = 8'h81;
+        w = 8'h81;
+        #10;
+        step = 1;
+        #10;
+        expected_alive = 16'h0001;
+        valo_selector = 2'b00;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Top left corner failed to spawn");
+		    $stop;
+		end
+        #10;
+        expected_alive = 16'h0008;
+        valo_selector = 2'b01;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Bottom left corner failed to spawn");
+		    $stop;
+		end
+        #10;
+        expected_alive = 16'h1000;
+        valo_selector = 2'b10;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Top right corner failed to spawn");
+		    $stop;
+		end
+        #10;
+        expected_alive = 16'h8000;
+        valo_selector = 2'b11;
+        #10;
+        if(expected_alive != valo) begin
+		    $display("Bottom right corner failed to spawn");
+		    $stop;
+		end
+        
+        
+        
         $display("All tests passed");
         $stop;
         

@@ -61,45 +61,45 @@ module life_array_8x8(
     wire [3:0] tile_2_N, tile_2_E, tile_2_S, tile_2_W;
     wire [3:0] tile_3_N, tile_3_E, tile_3_S, tile_3_W;
     
-    assign tile_0_N = 4'b0;
+    assign tile_0_N = n[3:0];
     assign tile_0_E = alive_2[3:0];
     assign tile_0_S = {alive_1[12],alive_1[8], alive_1[4], alive_1[0]};
-    assign tile_0_W = 4'b0;
+    assign tile_0_W = w[3:0];
                     
     assign tile_1_N = {alive_0[15],alive_0[11],alive_0[7],alive_0[3]},
            tile_1_E = alive_3[3:0],
-           tile_1_S = 4'b0,
-           tile_1_W = 4'b0;
+           tile_1_S = s[3:0],
+           tile_1_W = w[7:4];
                     
-    assign tile_2_N = 4'b0,
-           tile_2_E = 4'b0,
+    assign tile_2_N = n[7:4],
+           tile_2_E = e[3:0],
            tile_2_S = {alive_3[12],alive_3[8],alive_3[4],alive_3[0]},
            tile_2_W = alive_0[15:12];
                     
     assign tile_3_N = {alive_2[15],alive_2[11],alive_2[7],alive_2[3]},
-           tile_3_E = 4'b0,
-           tile_3_S = 4'b0,
+           tile_3_E = e[7:4],
+           tile_3_S = s[3:0],
            tile_3_W = alive_1[15:12];
      
-     wire tile_0_NW = 0,
-          tile_0_NE = 0,
+     wire tile_0_NW = nw,
+          tile_0_NE = n[4],
           tile_0_SE = alive_3[0],
-          tile_0_SW = 0;
+          tile_0_SW = w[4];
             
-     wire tile_1_NW = 0,
+     wire tile_1_NW = w[3],
           tile_1_NE = alive_2[3],
-          tile_1_SE = 0,
-          tile_1_SW = 0;
+          tile_1_SE = s[4],
+          tile_1_SW = sw;
             
-     wire tile_2_NW = 0,
-          tile_2_NE = 0,
-          tile_2_SE = 0,
+     wire tile_2_NW = n[3],
+          tile_2_NE = ne,
+          tile_2_SE = e[4],
           tile_2_SW = alive_1[12];
             
      wire tile_3_NW = alive_0[15],
-          tile_3_NE = 0,
-          tile_3_SE = 0,
-          tile_3_SW = 0;
+          tile_3_NE = e[3],
+          tile_3_SE = se,
+          tile_3_SW = s[3];
     
      assign write_0 = write_enb & (vali_selector == 2'b00);
      assign write_1 = write_enb & (vali_selector == 2'b01);

@@ -78,7 +78,7 @@ module life_array_8x8(
                     
     assign tile_3_N = {alive_2[15],alive_2[11],alive_2[7],alive_2[3]},
            tile_3_E = e[7:4],
-           tile_3_S = s[3:0],
+           tile_3_S = s[7:4],
            tile_3_W = alive_1[15:12];
      
      wire tile_0_NW = nw,

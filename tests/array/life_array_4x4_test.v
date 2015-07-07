@@ -40,7 +40,6 @@ module Conway_Sim;
     reg [15:0] val;
     reg write_enb;
     reg step = 0;
-    reg scan = 0;
     reg [3:0] n = 4'b0,
 			  e = 4'b0,
 			  s = 4'b0,
@@ -308,6 +307,7 @@ module Conway_Sim;
 		write_enb = 0;
 		step = 1;
 		#10;
+        step = 0;
 		expected_alive = 4'h0001;
 		if(expected_alive != alive) begin
 		    $display("Top left cell failed to come to life!");
@@ -318,6 +318,8 @@ module Conway_Sim;
 		    $display("Alive previous should be at 0!");
 		    $stop;
 		end
+        #10;
+        step = 1;
         #10;
         expected_alive = 4'h0001;
 		if(expected_alive != alive_prev) begin

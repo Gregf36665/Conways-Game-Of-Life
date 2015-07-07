@@ -108,6 +108,8 @@ module Block_Mem_Test;
 		#10;
 		array_selector = 0;
 		#20;
+        
+        $display("All passed");
 		$stop;
 		
 	end

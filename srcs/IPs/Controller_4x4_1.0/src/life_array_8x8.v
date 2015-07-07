@@ -26,8 +26,10 @@ module life_array_8x8(
       output reg [15:0] valo_prev,
       input [1:0] vali_selector, valo_selector,
       input write_enb,
-      input [7:0] n,e,s,w,
-      input nw,ne,se,sw,
+      input [7:0] ni,ei,si,wi,
+      output [7:0] no,eo,so,wo,
+      input nwi,nei,sei,swi,
+      output nwo,neo,seo,swo,
       input step
     );
     
@@ -61,50 +63,64 @@ module life_array_8x8(
     wire [3:0] tile_2_N, tile_2_E, tile_2_S, tile_2_W;
     wire [3:0] tile_3_N, tile_3_E, tile_3_S, tile_3_W;
     
-    assign tile_0_N = n[3:0];
+    assign tile_0_N = ni[3:0];
     assign tile_0_E = alive_2[3:0];
     assign tile_0_S = {alive_1[12],alive_1[8], alive_1[4], alive_1[0]};
-    assign tile_0_W = w[3:0];
+    assign tile_0_W = wi[3:0];
                     
     assign tile_1_N = {alive_0[15],alive_0[11],alive_0[7],alive_0[3]},
            tile_1_E = alive_3[3:0],
-           tile_1_S = s[3:0],
-           tile_1_W = w[7:4];
+           tile_1_S = si[3:0],
+           tile_1_W = wi[7:4];
                     
-    assign tile_2_N = n[7:4],
-           tile_2_E = e[3:0],
+    assign tile_2_N = ni[7:4],
+           tile_2_E = ei[3:0],
            tile_2_S = {alive_3[12],alive_3[8],alive_3[4],alive_3[0]},
            tile_2_W = alive_0[15:12];
                     
     assign tile_3_N = {alive_2[15],alive_2[11],alive_2[7],alive_2[3]},
-           tile_3_E = e[7:4],
-           tile_3_S = s[7:4],
+           tile_3_E = ei[7:4],
+           tile_3_S = si[7:4],
            tile_3_W = alive_1[15:12];
      
-     wire tile_0_NW = nw,
-          tile_0_NE = n[4],
+     wire tile_0_NW = nwi,
+          tile_0_NE = ni[4],
           tile_0_SE = alive_3[0],
-          tile_0_SW = w[4];
+          tile_0_SW = wi[4];
             
-     wire tile_1_NW = w[3],
+     wire tile_1_NW = wi[3],
           tile_1_NE = alive_2[3],
-          tile_1_SE = s[4],
-          tile_1_SW = sw;
+          tile_1_SE = si[4],
+          tile_1_SW = swi;
             
-     wire tile_2_NW = n[3],
-          tile_2_NE = ne,
-          tile_2_SE = e[4],
+     wire tile_2_NW = ni[3],
+          tile_2_NE = nei,
+          tile_2_SE = ei[4],
           tile_2_SW = alive_1[12];
             
      wire tile_3_NW = alive_0[15],
-          tile_3_NE = e[3],
-          tile_3_SE = se,
-          tile_3_SW = s[3];
+          tile_3_NE = ei[3],
+          tile_3_SE = sei,
+          tile_3_SW = si[3];
     
      assign write_0 = write_enb & (vali_selector == 2'b00);
      assign write_1 = write_enb & (vali_selector == 2'b01);
      assign write_2 = write_enb & (vali_selector == 2'b10);
      assign write_3 = write_enb & (vali_selector == 2'b11);
+     
+     assign no = {alive_2[12],alive_2[8],alive_2[4],alive_2[0],
+                  alive_0[12],alive_0[8],alive_0[4],alive_0[0]};
+
+     assign so = {alive_3[15],alive_3[11],alive_3[7],alive_3[3],
+                  alive_1[15],alive_1[11],alive_1[7],alive_1[3]};
+                  
+     assign eo = {alive_3[15:12],alive_2[15:12]};
+     assign wo = {alive_1[3:0],alive_0[3:0]};
+     
+     assign nwo = alive_0[0];
+     assign neo = alive_2[12];
+     assign seo = alive_1[3];
+     assign swo = alive_3[15];
      
       
     life_array_4x4 U_array_0 (.clk(clk),

@@ -57,14 +57,14 @@ module life_array_8x8_test;
 		.vali_selector(vali_selector), 
 		.valo_selector(valo_selector), 
 		.write_enb(write_enb), 
-		.n(n), 
-		.e(e), 
-		.s(s), 
-		.w(w), 
-		.nw(nw), 
-		.ne(ne), 
-		.se(se), 
-		.sw(sw), 
+		.ni(n), 
+		.ei(e), 
+		.si(s), 
+		.wi(w), 
+		.nwi(nw), 
+		.nei(ne), 
+		.sei(se), 
+		.swi(sw), 
 		.step(step)
 	);
 

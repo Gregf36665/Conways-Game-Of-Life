@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Conway_Sim;
+module life_array_4x4_test;
 
     task display_life;
       input [15:0] alive;

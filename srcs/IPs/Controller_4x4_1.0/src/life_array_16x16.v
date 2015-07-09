@@ -26,10 +26,10 @@ module life_array_16x16(
     input [3:0] valo_selector,
     input write_enb,
     input step,
-    output [15:0] valo,
-    output [15:0] valo_prev,
+    output reg [15:0] valo,
+    output reg [15:0] valo_prev,
     input [15:0] ni,ei,si,wi,
-    input nw,ne,se,sw,
+    input nwi,nei,sei,swi,
     output [31:0] no, eo, so, wo,
     output nwo, neo, seo, swo
     );
@@ -65,7 +65,7 @@ module life_array_16x16(
          
     wire tile_3_NWi = tile_0_SEo,
          tile_3_NEi = ei[7],
-         tile_3_SEi = se,
+         tile_3_SEi = sei,
          tile_3_SWi = si[7];
          
     // diagonal outputs
@@ -240,7 +240,7 @@ module life_array_16x16(
                             .valo_prev(valo_prev_3),
                             .valo_selector(valo_selector[1:0]),
                             .write_enb(write_enb_3),
-                            .step(step)
+                            .step(step),
                             .ni(tile_3_Ni),
                             .ei(tile_3_Ei),
                             .si(tile_3_Si),

@@ -30,11 +30,12 @@ module life_array_16x16(
     output reg [15:0] valo_prev,
     input [15:0] ni,ei,si,wi,
     input nwi,nei,sei,swi,
-    output [31:0] no, eo, so, wo,
+    output [15:0] no, eo, so, wo,
     output nwo, neo, seo, swo
     );
     
    /*****START EDGE CONNECTIONS********/
+   
     // edge inputs into the tiles
     wire [7:0] tile_0_Ni, tile_0_Ei, tile_0_Si, tile_0_Wi;
     wire [7:0] tile_1_Ni, tile_1_Ei, tile_1_Si, tile_1_Wi;
@@ -47,7 +48,7 @@ module life_array_16x16(
     wire [7:0] tile_2_No, tile_2_Eo, tile_2_So, tile_2_Wo;
     wire [7:0] tile_3_No, tile_3_Eo, tile_3_So, tile_3_Wo;
     
-    // diagonal inputs
+    // diagonal inputs on each tile
     wire tile_0_NWi = nwi,
          tile_0_NEi = ni[8],
          tile_0_SEi = tile_3_NWo,
@@ -88,7 +89,19 @@ module life_array_16x16(
          tile_3_NEo,
          tile_3_SEo,
          tile_3_SWo;
-         
+    
+    // outputs out of the 16x16
+    
+    assign no = {tile_2_No,tile_0_No};
+    assign eo = {tile_3_Eo,tile_2_Eo};
+    assign so = {tile_3_So,tile_1_So};
+    assign wo = {tile_1_Wo,tile_0_Wo};
+    
+    assign nwo = tile_0_NWo;
+    assign neo = tile_2_NEo;
+    assign seo = tile_3_SEo;
+    assign swo = tile_1_SWo;
+    
     // edge inputs
     assign tile_0_Ni = ni[7:0];
     assign tile_0_Ei = tile_2_Wo;

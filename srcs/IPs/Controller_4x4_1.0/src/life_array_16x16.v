@@ -34,6 +34,7 @@ module life_array_16x16(
     output nwo, neo, seo, swo
     );
     
+   /*****START EDGE CONNECTIONS********/
     // edge inputs into the tiles
     wire [7:0] tile_0_Ni, tile_0_Ei, tile_0_Si, tile_0_Wi;
     wire [7:0] tile_1_Ni, tile_1_Ei, tile_1_Si, tile_1_Wi;
@@ -88,7 +89,7 @@ module life_array_16x16(
          tile_3_SEo,
          tile_3_SWo;
          
-    
+    // edge inputs
     assign tile_0_Ni = ni[7:0];
     assign tile_0_Ei = tile_2_Wo;
     assign tile_0_Si = tile_1_No;
@@ -110,13 +111,44 @@ module life_array_16x16(
     assign tile_3_Wi = tile_1_Eo;
     
     
+    /*******END EDGE CONNECTIONS**********/
     
+    /*******START VALO SELECTOR***********/
+    
+    wire [15:0] valo_0,valo_1,valo_2,valo_3;
+    wire [15:0] valo_prev_0,valo_prev_1,valo_prev_2,valo_prev_3;
+    
+    always @*
+        case(valo_selector[3:2])
+            2'b00: begin
+                valo = valo_0;
+                valo_prev = valo_prev_0;
+                end
+            2'b01: begin
+                valo = valo_1;
+                valo_prev = valo_prev_1;
+                end
+            2'b10: begin
+                valo = valo_2;
+                valo_prev = valo_prev_2;
+                end
+            2'b11: begin
+                valo = valo_3;
+                valo_prev = valo_prev_3;
+                end
+        endcase
+            
+    /*******END VALO SELECTOR*************/
+    
+    
+    
+    /************START MODULES************/
     
     life_array_8x8 U_8x8_0 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .valo(),
-                            .valo_prev(),
+                            .valo(valo_0),
+                            .valo_prev(valo_prev_0),
                             .write_enb(),
                             .step(step),
                             .ni(tile_0_Ni),
@@ -140,9 +172,9 @@ module life_array_16x16(
     life_array_8x8 U_8x8_1 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .valo(),
+                            .valo(valo_1),
                             .valo_prev(),
-                            .write_enb(),
+                            .write_enb(valo_prev_1),
                             .step(step),
                             .ni(tile_1_Ni),
                             .ei(tile_1_Ei),
@@ -165,8 +197,8 @@ module life_array_16x16(
     life_array_8x8 U_8x8_2 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .valo(),
-                            .valo_prev(),
+                            .valo(valo_2),
+                            .valo_prev(valo_prev_2),
                             .write_enb(),
                             .step(step),
                             .ni(tile_2_Ni),
@@ -190,8 +222,8 @@ module life_array_16x16(
     life_array_8x8 U_8x8_3 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .valo(),
-                            .valo_prev(),
+                            .valo(valo_3),
+                            .valo_prev(valo_prev_3),
                             .write_enb(),
                             .step(step)
                             .ni(tile_3_Ni),
@@ -212,6 +244,6 @@ module life_array_16x16(
                             .swo(tile_3_SWo)
                             );
     
-
+    /*****************END MODULES***************/
 
 endmodule

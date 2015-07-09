@@ -140,18 +140,25 @@ module life_array_16x16(
             
     /*******END VALO SELECTOR*************/
     
+    /********START WRITE ENABLE LOGIC*****/
     
+    assign write_enb_0 = write_enb & (vali_selector[3:2] == 2'd0);
+    assign write_enb_1 = write_enb & (vali_selector[3:2] == 2'd1);
+    assign write_enb_2 = write_enb & (vali_selector[3:2] == 2'd2);
+    assign write_enb_3 = write_enb & (vali_selector[3:2] == 2'd3);
+    
+    /********END WRITE ENABLE LOGIC*******/
     
     /************START MODULES************/
     
     life_array_8x8 U_8x8_0 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .vali_selector(),
+                            .vali_selector(vali_selector[1:0]),
                             .valo(valo_0),
                             .valo_prev(valo_prev_0),
                             .valo_selector(valo_selector[1:0]),
-                            .write_enb(),
+                            .write_enb(write_enb_0),
                             .step(step),
                             .ni(tile_0_Ni),
                             .ei(tile_0_Ei),
@@ -174,11 +181,11 @@ module life_array_16x16(
     life_array_8x8 U_8x8_1 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .vali_selector(),
+                            .vali_selector(vali_selector[1:0]),
                             .valo(valo_1),
                             .valo_prev(valo_prev_1),
                             .valo_selector(valo_selector[1:0]),
-                            .write_enb(),
+                            .write_enb(write_enb_1),
                             .step(step),
                             .ni(tile_1_Ni),
                             .ei(tile_1_Ei),
@@ -201,11 +208,11 @@ module life_array_16x16(
     life_array_8x8 U_8x8_2 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .vali_selector(),
+                            .vali_selector(vali_selector[1:0]),
                             .valo(valo_2),
                             .valo_prev(valo_prev_2),
                             .valo_selector(valo_selector[1:0]),
-                            .write_enb(),
+                            .write_enb(write_enb_2),
                             .step(step),
                             .ni(tile_2_Ni),
                             .ei(tile_2_Ei),
@@ -228,11 +235,11 @@ module life_array_16x16(
     life_array_8x8 U_8x8_3 (.clk(clk),
                             .reset(reset),
                             .vali(vali),
-                            .vali_selector(),
+                            .vali_selector(vali_selector[1:0]),
                             .valo(valo_3),
                             .valo_prev(valo_prev_3),
                             .valo_selector(valo_selector[1:0]),
-                            .write_enb(),
+                            .write_enb(write_enb_3),
                             .step(step)
                             .ni(tile_3_Ni),
                             .ei(tile_3_Ei),

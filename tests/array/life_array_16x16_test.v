@@ -52,6 +52,9 @@ module life_array_16x16_test;
 	wire neo;
 	wire seo;
 	wire swo;
+    
+    // Expected value
+    reg [15:0] expected_alive = 16'h0000;
 
 	// Instantiate the Unit Under Test (UUT)
 	life_array_16x16 uut (
@@ -92,7 +95,28 @@ module life_array_16x16_test;
         #10;
         
 		// Add stimulus here
+        
+        vali = 16'h0001; // top left cell
+        vali_selector = 4'h0;
+        write_enb = 1;
+        #10;
+        write_enb = 0;
+        
+        valo_selector = 4'h0;
+        expected_alive = 16'h0001;
+        #10;		
+		if(expected_alive != valo) begin
+		    $display("Failed to write to top left cell only");
+		    $stop;
+		end
+		#10;
+        
+        
+        
 
+
+        $display("All tests passed");
+        $stop;
 	end
       
 endmodule

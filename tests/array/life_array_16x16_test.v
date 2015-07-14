@@ -24,6 +24,8 @@
 
 module life_array_16x16_test;
 
+    integer i; // use in for loops
+    
 	// Inputs
 	reg clk = 0;
 	reg reset = 1;
@@ -193,10 +195,14 @@ module life_array_16x16_test;
         #10;
         step = 1;
         #10;
-        #10;
         
-        
-
+        for (i = 0; i < 16; i = i + 1) begin
+            valo_selector = i;
+            if (valo == 16'h0000) begin
+                $display("Warning, %i is totally dead, should be stable!",i);
+                $stop;
+            end
+        end
 
         #20;
 

@@ -29,7 +29,7 @@ module life_array_16x16_test;
 	reg reset = 1;
 	reg [15:0] vali = 16'h0;
 	reg [3:0] vali_selector = 4'h0;
-	reg [3:0] valo_selector =4'h0;
+	reg [3:0] valo_selector = 4'h0;
 	reg write_enb = 0;
 	reg step = 0;
 	reg [15:0] ni = 16'h0000;
@@ -111,9 +111,94 @@ module life_array_16x16_test;
 		end
 		#10;
         
+        // trigger entire north edge
+        write_enb = 0;
+        reset = 1;
+        #10;
+        reset = 0;
+        #10;
+        write_enb = 1;
+        vali_selector = 4'h0;
+        vali = 16'h1111;
+        #10;
+        vali_selector = 4'h4;
+        vali = 16'h1111;
+        #10;
+        vali_selector = 4'h8;
+        vali = 16'h1111;
+        #10;
+        vali_selector = 4'hC;
+        vali = 16'h1111;
+        #10;
+        write_enb = 0;
+        expected_alive = 16'hFFFF;
+        if(expected_alive != no) begin
+		    $display("Failed to write north edge of cells");
+		    $stop;
+		end
+        
+        
+        
+        // try writing blocks on each edge
+        vali = 16'h8000;
+        vali_selector = 4'h0;
+        write_enb = 1;
+        #10;
+        vali = 16'h9000;
+        vali_selector = 4'h1;
+        #10;
+        vali = 16'h9000;
+        vali_selector = 4'h2;
+        #10;
+        vali = 16'h1000;
+        vali_selector = 4'h3;
+        #10;
+        vali = 16'h8008;
+        vali_selector = 4'h4;
+        #10;
+        vali = 16'h8008;
+        vali_selector = 4'h8;
+        #10;
+        vali = 16'h9009;
+        vali_selector = 4'h5;
+        #10;
+        vali = 16'h9009;
+        vali_selector = 4'h6;
+        #10;
+        vali = 16'h9009;
+        vali_selector = 4'h9;
+        #10;
+        vali = 16'h9009;
+        vali_selector = 4'hA;
+        #10;
+        vali = 16'h1001;
+        vali_selector = 4'h7;
+        #10;
+        vali = 16'h1001;
+        vali_selector = 4'hB;
+        #10;
+        vali = 16'h0008;
+        vali_selector = 4'hC;
+        #10;
+        vali = 16'h0009;
+        vali_selector = 4'hD;
+        #10;
+        vali = 16'h0009;
+        vali_selector = 4'hE;
+        #10;
+        vali = 16'h0001;
+        vali_selector = 4'hF;
+        #10;
+        write_enb = 0;
+        #10;
+        step = 1;
+        #10;
+        #10;
         
         
 
+
+        #20;
 
         $display("All tests passed");
         $stop;

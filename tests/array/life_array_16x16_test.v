@@ -204,7 +204,38 @@ module life_array_16x16_test;
             end
         end
 
-        #20;
+        #10;
+        
+        reset = 1;
+        write_enb = 0;
+        #10;
+        reset = 0;
+        #10;
+        vali = 16'hEEE0;
+        vali_selector = 4'h5;
+        write_enb = 1;
+        #10;
+        vali = 0777;
+        vali_selector = 4'hA;
+        for (i = 0 ; i < 8; i = i + 1) begin
+        	step = 1;
+        	#10;
+        	step = 0;
+        	#10;
+	end
+	valo_selector = 4'h5;
+	#10;
+        if (valo != 16'hEEE0) begin
+            $display("Warning, Figure 8 failed to return to inital state Top left");
+            $stop;
+        end
+        valo_selector = 4'hA;
+        #10;
+        if (valo != 16'h0777) begin
+            $display("Warning, Figure 8 failed to return to inital state Bottom right");
+            $stop;
+        end
+        
 
         $display("All tests passed");
         $stop;

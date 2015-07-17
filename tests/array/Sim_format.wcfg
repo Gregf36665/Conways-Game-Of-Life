@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="U:/Excel/TSP/Conway/life_array_16x16_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="life_array_16x16_test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="group37" type="group">
+      <obj_property name="label">8x8_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_0/alive_0" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_0[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_0[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_0/alive_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_1[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_0/alive_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_2[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_0/alive_3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_3[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_3[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group36" type="group">
+      <obj_property name="label">8x8_1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_1/alive_0" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_0[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_0[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_1/alive_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_1[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_1/alive_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_2[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_1/alive_3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_3[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_3[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group42" type="group">
+      <obj_property name="label">8x8_2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_2/alive_0" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_0[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_0[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_2/alive_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_1[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_2/alive_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_2[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_2/alive_3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_3[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_3[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group47" type="group">
+      <obj_property name="label">8x8_3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_3/alive_0" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_0[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_0[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_3/alive_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_1[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_3/alive_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_2[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/life_array_16x16_test/uut/U_8x8_3/alive_3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alive_3[15:0]</obj_property>
+         <obj_property name="ObjectShortName">alive_3[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

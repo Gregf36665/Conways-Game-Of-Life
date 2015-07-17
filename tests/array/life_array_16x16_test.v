@@ -207,6 +207,30 @@ module life_array_16x16_test;
         #10;
         
         reset = 1;
+        step = 0;
+        write_enb = 0;
+        #10;
+        reset = 0;
+        
+        vali_selector = 4'h5;
+        vali = 16'h0800;
+        write_enb = 1;
+        #10;
+        vali_selector = 4'h6;
+        vali = 16'h0300;
+        #10;
+        write_enb = 0;
+        #10;
+        step = 1;
+        #10;
+        step = 0;
+        #10;
+        step = 1;
+        #10;
+
+    /*
+        reset = 1;
+        step = 0;
         write_enb = 0;
         #10;
         reset = 0;
@@ -237,6 +261,11 @@ module life_array_16x16_test;
         end
         
 
+
+    */
+    
+        #20;
+    
         $display("All tests passed");
         $stop;
 	end

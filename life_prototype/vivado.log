@@ -1,0 +1,1895 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Jul 20 14:35:37 2015
+# Process ID: 3562
+# Log file: /auto/bunter_usr5/nestorj/life_prototype/vivado.log
+# Journal file: /auto/bunter_usr5/nestorj/life_prototype/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project lp1 /auto/bunter_usr5/nestorj/life_prototype/lp1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.2/data/ip'.
+set_property simulator_language Verilog [current_project]
+add_files -norecurse {/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv /auto/bunter_usr5/nestorj/life_prototype/pe_array.sv /auto/bunter_usr5/nestorj/life_prototype/pe.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property FILE_TYPE {Verilog Header} [get_files /auto/bunter_usr5/nestorj/life_prototype/pe.sv]
+update_compile_order -fileset sources_1
+set_property FILE_TYPE {Verilog Header} [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+set_property file_type {Verilog Header} [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+set_property file_type SystemVerilog [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+set_property file_type SystemVerilog [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+set_property file_type {Verilog Header} [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+set_property file_type {Verilog Header} [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+remove_files /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+add_files -norecurse /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv
+update_compile_order -fileset sources_1
+add_files -norecurse /auto/bunter_usr5/nestorj/life_prototype/pe.sv
+WARNING: [filemgmt 56-12] File '/auto/bunter_usr5/nestorj/life_prototype/pe.sv' cannot be added to the project because it already exists in the project, skipping this file
+set_property FILE_TYPE SystemVerilog [get_files /auto/bunter_usr5/nestorj/life_prototype/pe.sv]
+update_compile_order -fileset sources_1
+file mkdir /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv w ]
+add_files -fileset sim_1 /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv
+update_compile_order -fileset sim_1
+set_property FILE_TYPE SystemVerilog [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+set_property USED_IN_SYNTHESIS 0 [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+set_property USED_IN_SYNTHESIS 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+set_property USED_IN_SYNTHESIS 0 [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+ERROR: [VRFC 10-91] status is not declared [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:41]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register active is not permitted, left-hand side should be reg/integer/time/genvar [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:77]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register active is not permitted, left-hand side should be reg/integer/time/genvar [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:77]
+ERROR: [VRFC 10-1040] module pe_array ignored due to previous errors [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:6]
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+WARNING: [VRFC 10-1315] redeclaration of ansi port active is not allowed [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:22]
+ERROR: [VRFC 10-91] state_out_a is not declared [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:42]
+ERROR: [VRFC 10-1040] module pe_array ignored due to previous errors [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:6]
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log' file for more information.
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library work
+INFO: [HDL 9-2216] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library work [/auto/bunter_usr5/nestorj/life_prototype/pe.sv:1]
+INFO: [HDL 9-1065] Parsing verilog file "pe_array_decs.sv" included at line 20. [/auto/bunter_usr5/nestorj/life_prototype/pe.sv:20]
+INFO: [HDL 9-1065] Parsing verilog file "pe_decs.sv" included at line 21. [/auto/bunter_usr5/nestorj/life_prototype/pe.sv:21]
+INFO: [HDL 9-2216] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library work
+INFO: [HDL 9-2216] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library work [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:1]
+INFO: [HDL 9-1065] Parsing verilog file "pe_array_decs.sv" included at line 1. [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:1]
+INFO: [HDL 9-1065] Parsing verilog file "pe_decs.sv" included at line 2. [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:2]
+INFO: [HDL 9-2216] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library work
+INFO: [HDL 9-2216] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv" into library work [/auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv:1]
+[Mon Jul 20 15:45:59 2015] Launched synth_1...
+Run output will be captured here: /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library work
+INFO: [HDL 9-2216] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library work [/auto/bunter_usr5/nestorj/life_prototype/pe.sv:1]
+INFO: [HDL 9-1065] Parsing verilog file "pe_array_decs.sv" included at line 20. [/auto/bunter_usr5/nestorj/life_prototype/pe.sv:20]
+INFO: [HDL 9-1065] Parsing verilog file "pe_decs.sv" included at line 21. [/auto/bunter_usr5/nestorj/life_prototype/pe.sv:21]
+INFO: [HDL 9-2216] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library work
+INFO: [HDL 9-2216] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library work [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:1]
+INFO: [HDL 9-1065] Parsing verilog file "pe_array_decs.sv" included at line 1. [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:1]
+INFO: [HDL 9-1065] Parsing verilog file "pe_decs.sv" included at line 2. [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:2]
+INFO: [HDL 9-2216] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library work
+INFO: [HDL 9-2216] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv" into library work [/auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv:1]
+[Mon Jul 20 15:47:05 2015] Launched synth_1...
+Run output will be captured here: /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.runs/synth_1/runme.log
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property part xa7a15tcpg236-2I [current_project]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+ERROR: [VRFC 10-91] state_out_a is not declared [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:42]
+ERROR: [VRFC 10-1040] module pe_array ignored due to previous errors [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:6]
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+ERROR: [VRFC 10-1280] procedural assignment to a non-register state_out is not permitted, left-hand side should be reg/integer/time/genvar [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:80]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register state_out is not permitted, left-hand side should be reg/integer/time/genvar [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:80]
+ERROR: [VRFC 10-1040] module pe_array ignored due to previous errors [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:6]
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+ERROR: [VRFC 10-91] cmd_in is not declared [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:53]
+ERROR: [VRFC 10-91] cmd_in is not declared [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:55]
+ERROR: [VRFC 10-1040] module pe_array_bench ignored due to previous errors [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:24]
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-1147] non-static generate-for loop. Unroll failed [/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv:66]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 79 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 80 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 15:57:55 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 15:57:55 2015...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 5883.883 ; gain = 0.000 ; free physical = 1524 ; free virtual = 18446
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+ERROR: [Simtcl 6-50] Simulation engine failed to start: A valid license was not found for simulation. Please run the Vivado License Manager for assistance in determining which features and devices are licensed for your system.
+Please see the Tcl Console or the Messages for details.
+
+ERROR: [USF-XSim-62] 'simulate' step failed with errors. Please check the Tcl console or log files for more information.
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 5907.148 ; gain = 23.266 ; free physical = 1515 ; free virtual = 18443
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 79 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 80 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:05:00 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:05:00 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 5923.973 ; gain = 16.824 ; free physical = 1438 ; free virtual = 18384
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+add_wave {{/pe_array_bench/DUV/\outer[3].inner[3].PE_INST }} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1432 ; free virtual = 18378
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 79 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 80 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 2504686363 -regid "176005599_176005601_0_106" -xml /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.di..."
+    (file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl" line 42)
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:11:34 2015...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1426 ; free virtual = 18377
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1422 ; free virtual = 18372
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /cmd}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state_out}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 79 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 80 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:16:53 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:16:53 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1425 ; free virtual = 18376
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:18:57 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:18:57 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1423 ; free virtual = 18374
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /active}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /sel}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /rsel}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /csel}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:24:27 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:24:27 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1418 ; free virtual = 18370
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /sel}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:28:02 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:28:02 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+state of (0,0)=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1419 ; free virtual = 18371
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:30:26 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:30:26 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+welcome back my friends, to the show that never ends
+state of (0,0)=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1415 ; free virtual = 18367
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:32:08 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:32:08 2015...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1417 ; free virtual = 18369
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+welcome back my friends, to the show that never ends
+state of (0,0)=1
+state of (0,0)=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1414 ; free virtual = 18366
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_behav xil_defaultlib.pe_array xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+WARNING: [XSIM 43-4100] "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:38:44 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:38:44 2015...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 5936.789 ; gain = 0.000 ; free physical = 1409 ; free virtual = 18361
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_behav -key {Behavioral:sim_1:Functional:pe_array} -tclbatch {pe_array.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 5970.891 ; gain = 34.102 ; free physical = 1405 ; free virtual = 18357
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-93] state is not declared under prefix PE_INST [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:43]
+ERROR: [VRFC 10-93] state is not declared under prefix PE_INST [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:44]
+ERROR: [VRFC 10-93] state is not declared under prefix PE_INST [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:45]
+ERROR: [VRFC 10-93] state is not declared under prefix PE_INST [/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv:46]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+ERROR: [XSIM 43-4287] "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" Line 78. Undefined system task '$display_states'
+INFO: [USF-XSim-99] Step results log file:'/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:48:52 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:48:52 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+welcome back my friends, to the show that never ends
+array state at time                    0
+    x x x x
+    x x x x
+    x x x x
+    x x x x
+state of (0,0)=1
+array state at time                71000
+    1 0 0 0
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+state of (0,0)=0
+array state at time               111000
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5970.891 ; gain = 0.000 ; free physical = 1406 ; free virtual = 18359
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 16:59:30 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 16:59:30 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+welcome back my friends, to the show that never ends
+array state at time                    0
+    x x x x
+    x x x x
+    x x x x
+    x x x x
+array state at time               131000
+    1 0 0 0
+    0 0 0 0
+    0 1 1 1
+    0 0 0 0
+array state at time               151000
+    0 0 0 0
+    0 1 1 0
+    0 0 1 0
+    0 0 1 0
+array state at time               171000
+    0 0 0 0
+    0 1 1 0
+    0 0 1 1
+    0 0 0 0
+array state at time               191000
+    0 0 0 0
+    0 1 1 1
+    0 1 1 1
+    0 0 0 0
+array state at time               211000
+    0 0 1 0
+    0 1 0 1
+    0 1 0 1
+    0 0 1 0
+state of (0,0)=0
+array state at time               251000
+    0 0 1 0
+    0 1 0 1
+    0 1 0 1
+    0 0 1 0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5970.891 ; gain = 0.000 ; free physical = 1403 ; free virtual = 18356
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 17:06:05 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 17:06:05 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+welcome back my friends, to the show that never ends
+array state at time                    0
+    x x x x
+    x x x x
+    x x x x
+    x x x x
+array state at time               111000
+    1 0 0 0
+    0 0 0 0
+    0 1 1 1
+    0 0 0 0
+array state at time               131000
+    0 0 0 0
+    0 1 1 0
+    0 0 1 0
+    0 0 1 0
+array state at time               151000
+    0 0 0 0
+    0 1 1 0
+    0 0 1 1
+    0 0 0 0
+array state at time               171000
+    0 0 0 0
+    0 1 1 1
+    0 1 1 1
+    0 0 0 0
+array state at time               191000
+    0 0 1 0
+    0 1 0 1
+    0 1 0 1
+    0 0 1 0
+state of (0,0)=0
+array state at time               231000
+    0 0 1 0
+    0 1 0 1
+    0 1 0 1
+    0 0 1 0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 5970.891 ; gain = 0.000 ; free physical = 1405 ; free virtual = 18359
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'pe_array_bench' in fileset 'sim_1'...
+INFO: [USF-XSim-66] Exported '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+xvlog -m64 --relax -prj pe_array_bench_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pe_array_bench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav/xsim.dir/pe_array_bench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 20 17:07:52 2015. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul 20 17:07:52 2015...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pe_array_bench_behav -key {Behavioral:sim_1:Functional:pe_array_bench} -tclbatch {pe_array_bench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source pe_array_bench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+welcome back my friends, to the show that never ends
+array state at time                    0
+    x x x x
+    x x x x
+    x x x x
+    x x x x
+array state at time                91000
+    1 0 0 0
+    0 0 0 0
+    0 1 1 0
+    0 0 0 0
+array state at time               111000
+    0 0 0 0
+    0 1 0 0
+    0 0 0 0
+    0 0 0 0
+array state at time               131000
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+array state at time               151000
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+array state at time               171000
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+state of (0,0)=0
+array state at time               211000
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+    0 0 0 0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pe_array_bench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 5970.891 ; gain = 0.000 ; free physical = 1403 ; free virtual = 18357
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 20 17:09:23 2015...

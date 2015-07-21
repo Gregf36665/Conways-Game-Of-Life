@@ -1,0 +1,139 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Jul 20 14:35:37 2015
+# Process ID: 3562
+# Log file: /auto/bunter_usr5/nestorj/life_prototype/vivado.log
+# Journal file: /auto/bunter_usr5/nestorj/life_prototype/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project lp1 /auto/bunter_usr5/nestorj/life_prototype/lp1 -part xc7vx485tffg1157-1
+set_property simulator_language Verilog [current_project]
+add_files -norecurse {/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv /auto/bunter_usr5/nestorj/life_prototype/pe_array.sv /auto/bunter_usr5/nestorj/life_prototype/pe.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+update_compile_order -fileset sources_1
+set_property FILE_TYPE {Verilog Header} [get_files /auto/bunter_usr5/nestorj/life_prototype/pe.sv]
+update_compile_order -fileset sources_1
+set_property FILE_TYPE {Verilog Header} [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+set_property file_type {Verilog Header} [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+set_property file_type SystemVerilog [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+set_property file_type SystemVerilog [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+set_property file_type {Verilog Header} [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv]
+set_property file_type {Verilog Header} [get_files  /auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv]
+remove_files /auto/bunter_usr5/nestorj/life_prototype/pe_arrray_decs.sv
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+set_property IS_GLOBAL_INCLUDE 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv]
+add_files -norecurse /auto/bunter_usr5/nestorj/life_prototype/pe_array_decs.sv
+update_compile_order -fileset sources_1
+add_files -norecurse /auto/bunter_usr5/nestorj/life_prototype/pe.sv
+set_property FILE_TYPE SystemVerilog [get_files /auto/bunter_usr5/nestorj/life_prototype/pe.sv]
+update_compile_order -fileset sources_1
+file mkdir /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv w ]
+add_files -fileset sim_1 /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv
+update_compile_order -fileset sim_1
+set_property FILE_TYPE SystemVerilog [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+set_property USED_IN_SYNTHESIS 0 [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+set_property USED_IN_SYNTHESIS 1 [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+set_property USED_IN_SYNTHESIS 0 [get_files /auto/bunter_usr5/nestorj/life_prototype/lp1/lp1.srcs/sim_1/new/pe_array_bench.sv]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_runs synth_1
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+set_property part xa7a15tcpg236-2I [current_project]
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source pe_array_bench.tcl
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+add_wave {{/pe_array_bench/DUV/\outer[3].inner[3].PE_INST }} 
+restart
+run all
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /cmd}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+restart
+run all
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state_out}} 
+restart
+run all
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /active}} 
+restart
+run all
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /sel}} 
+restart
+run all
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /rsel}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /csel}} 
+restart
+run all
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /state}} 
+add_wave {{/pe_array_bench/DUV/\outer[0].inner[0].PE_INST /sel}} 
+restart
+run all
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source pe_array.tcl
+close_sim
+close_sim
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+source pe_array_bench.tcl
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+close_sim
+launch_simulation
+source pe_array_bench.tcl
+close_sim

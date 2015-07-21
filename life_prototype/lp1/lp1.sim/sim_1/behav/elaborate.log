@@ -1,0 +1,147 @@
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 986cee26412f48769b0cc25f3e5548e7 --debug typical --relax --mt 8 --include ../../../../ -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pe_array_bench_behav xil_defaultlib.pe_array_bench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv" Line 6. Module pe_array_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/auto/bunter_usr5/nestorj/life_prototype/pe.sv" Line 23. Module pe doesn't have a timescale but at least one module in design has a timescale.
+INFO: [XSIM 43-4009] "active", written at line 77 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+INFO: [XSIM 43-4009] "state_out", written at line 78 in file "/auto/bunter_usr5/nestorj/life_prototype/pe_array.sv", has also been read in this always_comb/always_latch block and is not added to the sensitivity list.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+WARNING: [XSIM 43-3447] Restricting number of parallel compilation jobs to 4 to avoid system resource limitations.
+Compiling module xil_defaultlib.pe
+Compiling module xil_defaultlib.pe_array_default
+Compiling module xil_defaultlib.pe_array_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pe_array_bench_behav

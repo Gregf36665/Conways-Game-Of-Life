@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" "../../../../pe.sv" --include "../../../../"
+sv xil_defaultlib "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" "../../../../pe_array.sv" --include "../../../../"
+sv xil_defaultlib "/auto/bunter_usr5/nestorj/life_prototype/pe_decs.sv" "../../../lp1.srcs/sim_1/new/pe_array_bench.sv" --include "../../../../"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

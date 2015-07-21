@@ -225,10 +225,13 @@ module life_array_16x16_test;
         #10;
         step = 0;
         #10;
-        step = 1;
+        valo_selector = 4'h6;
         #10;
-
-    /*
+        if (valo != 16'h0111) begin
+            $display("Warning, 4'h6 isn't in the right state, should be blinking!");
+            $stop;
+        end
+        
         reset = 1;
         step = 0;
         write_enb = 0;
@@ -239,9 +242,10 @@ module life_array_16x16_test;
         vali_selector = 4'h5;
         write_enb = 1;
         #10;
-        vali = 0777;
+        vali = 16'h0777;
         vali_selector = 4'hA;
-        for (i = 0 ; i < 8; i = i + 1) begin
+        #10;
+        for (i = 0 ; i < 9; i = i + 1) begin
         	step = 1;
         	#10;
         	step = 0;
@@ -262,7 +266,7 @@ module life_array_16x16_test;
         
 
 
-    */
+    
     
         #20;
     

@@ -18,7 +18,7 @@
 module life_array_4x4(input clk,
 		      input reset,
 		      output [15:0] alive,
-              output [15:0] alive_prev,
+		      output [15:0] alive_prev,
 		      input [15:0] val,
 		      input write_enb,
 		      input step, // set this high to start running the tiles

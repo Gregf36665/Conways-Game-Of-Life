@@ -56,7 +56,7 @@ module pe (input clk, rst,
 
    assign 			     status_out = status_from_state(state);
 
-   logic [3:0] 			 neighbor_count;
+   logic [3*`N_STATUS_BITS:0] 			 neighbor_count;
 
    assign neighbor_count = w_i + n_i + e_i + s_i
       + nw_i + ne_i + sw_i + se_i;

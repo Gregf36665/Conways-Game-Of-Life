@@ -21,7 +21,8 @@
 `include "pe_decs.sv"
 
 module pe (input clk, rst,
-       input 		       rsel, csel, // used for read, write
+       input 		       rsel_i, csel_i, // used for write
+       input 		       rsel_o, csel_o, // used for read
        input [`PE_CMD_BITS-1:0]    cmd,
        output [`N_STATUS_BITS-1:0] status_out, // for communicating with neighbors
        input [`PE_STATE_BITS-1:0]  state_in,
@@ -29,13 +30,15 @@ module pe (input clk, rst,
        output 		       active, // for keeping track of activity in entire array - true when state changes
 
        input [`N_STATUS_BITS-1:0]  w_i, e_i, n_i, s_i, // manhattan neighbors
-       input [`N_STATUS_BITS-1:0]  nw_i, ne_i, sw_i, se_i);   // diagonal neighbors
+       input [`N_STATUS_BITS-1:0]  nw_i, ne_i, sw_i, se_i    // diagonal neighbors
+       );
 
    // PE selection logic
 
-   logic 			      sel;
+   logic sel_i, sel_o;
    
-   assign sel = rsel & csel;
+   assign sel_i = rsel_i & csel_i;
+   assign sel_o = rsel_o & csel_o;
    
    // state memory for this PE
 
@@ -59,41 +62,31 @@ module pe (input clk, rst,
       + nw_i + ne_i + sw_i + se_i;
 
 
-   always_ff @(posedge clk)
-     if (rst) state <= `PE_STATE_DEAD;
-     else state <= nstate;
+    always_ff @(posedge clk)
+        if (rst) state <= `PE_STATE_DEAD;
+        else state <= nstate;
          
-   always_comb
-     begin
-     state_out = state; // default beavhior
-     nstate = state;
-    case (cmd)
-      `PE_CMD_NOP:
-        nstate = state;  // do nothing!
-      `PE_CMD_PROCESS:
-        if (neighbor_count < 2) nstate = `PE_STATE_DEAD;
-        else if (neighbor_count == 2) nstate = state;
-        else if (neighbor_count == 3) nstate = `PE_STATE_LIVE;
-        else nstate = `PE_STATE_DEAD;
-      `PE_CMD_READ:
-        if (sel) state_out = state;
-        else state_out = 0;
-      `PE_CMD_WRITE:
-        if (sel) nstate = state_in;
-        else nstate = state;
-      default: nstate = state;
-     endcase // case(cmd)
-     end // always_comb
+    always_comb begin
+        state_out = state; // default beavhior
+        nstate = state;
+        if (sel_o) state_out = state;
+        else state_out = 0;    
+        case (cmd)
+            `PE_CMD_NOP:
+                nstate = state;  // do nothing!
+            `PE_CMD_PROCESS:
+                if (neighbor_count < 2) nstate = `PE_STATE_DEAD;
+                else if (neighbor_count == 2) nstate = state;
+                else if (neighbor_count == 3) nstate = `PE_STATE_LIVE;
+                else nstate = `PE_STATE_DEAD;
+            `PE_CMD_WRITE:
+                if (sel_i) nstate = state_in;
+                else nstate = state;
+            default: nstate = state;
+        endcase // case(cmd)
+   end // always_comb
 
 
    assign active = nstate != state;
 
-endmodule // pe
-
-
-
-
-
-
-
-       
+endmodule // pe   

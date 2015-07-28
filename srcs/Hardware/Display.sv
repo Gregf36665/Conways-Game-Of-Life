@@ -25,6 +25,7 @@
 module Display(
     input [10:0] x,
     input [10:0] y,
+    input [`PE_STATE_BITS-1:0] state_prev,
     input [`PE_STATE_BITS-1:0] state,
     output [11:0] rgb,
     output [`N_PX_BITS-1:0] x_array,
@@ -41,11 +42,15 @@ module Display(
     assign y_array = y[9:9-`N_PX_BITS+1];
     
     always_comb begin
-        case(state)
-        `PE_STATE_LIVE:
+        case({state,state_prev})
+        {`PE_STATE_LIVE,`PE_STATE_LIVE}:
             color = 12'h0F0;
-        `PE_STATE_DEAD:
-            color = 12'h000;
+        {`PE_STATE_LIVE,`PE_STATE_DEAD}:
+                color = 12'hFF0;
+        {`PE_STATE_DEAD,`PE_STATE_LIVE}:
+                color = 12'hF00;
+        {`PE_STATE_DEAD,`PE_STATE_DEAD}:
+            color = 12'hF00;
         default:
             color = 12'h0;
         endcase

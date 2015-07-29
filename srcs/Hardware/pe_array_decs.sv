@@ -24,11 +24,11 @@
 
 // size parameters - PE array
 
-`define N_PX 16   // width of tile in PEs
-`define N_PY 16  // height of tile in PEs
+`define N_PX 64   // width of tile in PEs
+`define N_PY 64  // height of tile in PEs
 
-`define N_PX_BITS 4  // number of bits in horiz physical address ( ceil(log2(N_PX)) )
-`define N_PY_BITS 4  // number of bits in vertical physical address ( ceil(log2(N_PY)) )
+`define N_PX_BITS 6  // number of bits in horiz physical address ( ceil(log2(N_PX)) )
+`define N_PY_BITS 6  // number of bits in vertical physical address ( ceil(log2(N_PY)) )
 `define N_P_BITS `N_PX_BITS + `N_PY_BITS
 
 

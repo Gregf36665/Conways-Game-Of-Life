@@ -37,26 +37,35 @@ module Top(
     wire [10:0] x,y;
     wire [`N_PX_BITS-1:0] adr_x_o;
     wire [`N_PY_BITS-1:0] adr_y_o;
+   
+    wire [`N_PX_BITS-1:0] adr_x_i;
+    wire [`N_PY_BITS-1:0] adr_y_i;
     
     wire [`PE_STATE_BITS-1:0] state_out;
         
     // Trigger for delayed signal
     Timer #(.COUNT_MAX(100000000)) timer (.clk(clk),.trigger(trigger));
          
-    always_comb
-        if(step & trigger) cmd = 2'b01;
-        else if(write) cmd = 2'b11;
-        else cmd = 2'b00;
+    FSM FINITE_STATE_MACHINE (.clk(clk),
+                              .trigger(trigger),
+                              .enb(sw[0]),
+                              .reset(reset),
+                              .run(sw[1]),
+                              .x(adr_x_i),
+                              .y(adr_y_i),
+                              .cmd(cmd),
+                              .val(val)
+                              );
         
     
     pe_array ARRAY (.clk(clk),
                     .reset(reset),
                     .cmd(cmd),
-                    .adr_x_i(sw[3:0]),
-                    .adr_y_i(sw[7:4]),
+                    .adr_x_i(adr_x_i),
+                    .adr_y_i(adr_y_i),
                     .adr_x_o(adr_x_o),
                     .adr_y_o(adr_y_o),
-                    .state_in(1'b1),
+                    .state_in(val),
                     .active(active),
                     .state_out(state_out)
                     );

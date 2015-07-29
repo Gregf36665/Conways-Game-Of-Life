@@ -27,7 +27,6 @@ module pe (input clk, rst,
        output [`N_STATUS_BITS-1:0] status_out, // for communicating with neighbors
        input [`PE_STATE_BITS-1:0]  state_in,
        output reg [`PE_STATE_BITS-1:0] state_out,
-       output reg [`PE_STATE_BITS-1:0] state_out_prev,
        output 		       active, // for keeping track of activity in entire array - true when state changes
 
        input [`N_STATUS_BITS-1:0]  w_i, e_i, n_i, s_i, // manhattan neighbors
@@ -43,7 +42,7 @@ module pe (input clk, rst,
    
    // state memory for this PE
 
-   logic [`PE_STATE_BITS-1:0] 	      state, state_prev, nstate, pstate;
+   logic [`PE_STATE_BITS-1:0] 	      state, nstate;
 
 
    // This functon should be modified for different PEs
@@ -68,32 +67,25 @@ module pe (input clk, rst,
     always_ff @(posedge clk)
         if (rst) begin 
             state <= `PE_STATE_DEAD;
-            state_prev <= `PE_STATE_DEAD;
         end
         else begin 
             state <= nstate;
-            state_prev <= pstate;
         end
          
     always_comb begin
         state_out = state; // default beavhior
-        state_out_prev = state_prev; // default beavhior
         nstate = state;
         if (sel_o) begin
             state_out = state;
-            state_out_prev = state_prev;
         end
         else begin
             state_out = 0;
-            state_out_prev = 0;
         end   
         case (cmd)
             `PE_CMD_NOP: begin
                     nstate = state;  // do nothing!
-                    pstate = state_prev;
                 end
             `PE_CMD_PROCESS: begin
-                    pstate = state;
                     if (neighbor_count < 2) nstate = `PE_STATE_DEAD;
                     else if (neighbor_count == 2) nstate = state;
                     else if (neighbor_count == 3) nstate = `PE_STATE_LIVE;
@@ -102,15 +94,12 @@ module pe (input clk, rst,
             `PE_CMD_WRITE:
                 if (sel_i) begin
                     nstate = state_in;
-                    pstate = state_in;
                 end
                 else begin
                     nstate = state;
-                    pstate = state_prev;
                 end
             default: begin
                 nstate = state;
-                pstate = state_prev;
             end
         endcase // case(cmd)
    end // always_comb

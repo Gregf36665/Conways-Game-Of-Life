@@ -38,7 +38,7 @@ module Top(
     wire [`N_PX_BITS-1:0] adr_x_o;
     wire [`N_PY_BITS-1:0] adr_y_o;
     
-    wire [`PE_STATE_BITS-1:0] state_out, state_out_prev;
+    wire [`PE_STATE_BITS-1:0] state_out;
         
     // Trigger for delayed signal
     Timer #(.COUNT_MAX(100000000)) timer (.clk(clk),.trigger(trigger));
@@ -58,8 +58,7 @@ module Top(
                     .adr_y_o(adr_y_o),
                     .state_in(1'b1),
                     .active(active),
-                    .state_out(state_out),
-                    .state_out_prev(state_out_prev)
+                    .state_out(state_out)
                     );
                     
     VESADriver vga_driver (.clk(clk),
@@ -72,7 +71,6 @@ module Top(
     Display display (.x(x),
                      .y(y),
                      .state(state_out),
-                     .state_prev(state_out_prev),
                      .rgb({red,green,blue}),
                      .x_array(adr_x_o),
                      .y_array(adr_y_o)

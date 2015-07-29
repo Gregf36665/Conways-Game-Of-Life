@@ -7,7 +7,6 @@ module pe_array ( input                       clk, reset,
  		  input [`PE_CMD_BITS-1:0]    cmd,
 		  input [`PE_STATE_BITS-1:0]  state_in,
 		  output logic [`PE_STATE_BITS-1:0] state_out,
-		  output logic [`PE_STATE_BITS-1:0] state_out_prev,
 		  output logic		      active,
 		  input [`N_PX_BITS-1:0]      adr_x_i,
 		  input [`N_PY_BITS-1:0]      adr_y_i,
@@ -19,8 +18,7 @@ module pe_array ( input                       clk, reset,
 
    logic [`N_PX+2-1:0][`N_PY+2-1:0][`N_STATUS_BITS-1:0] status_a;  // use oversized array to connect edges!!!
    logic [`N_PX-1:0][`N_PY-1:0] active_a;
-   logic [`N_PX-1:0][`N_PY-1:0][`PE_STATE_BITS-1:0] state_out_a;   
-   logic [`N_PX-1:0][`N_PY-1:0][`PE_STATE_BITS-1:0] state_out_a_prev;   
+   logic [`N_PX-1:0][`N_PY-1:0][`PE_STATE_BITS-1:0] state_out_a; 
 
 
     // Input selector
@@ -48,9 +46,9 @@ module pe_array ( input                       clk, reset,
     endgenerate
 
     generate
-        for (i=1; i<`N_PX; i=i+1) // build column-by-column
+        for (i=1; i<`N_PX+1; i=i+1) // build column-by-column
 	    begin: outer
-	        for (j=1; j<`N_PY; j=j+1) // instantiate cells in each column
+	        for (j=1; j<`N_PY+1; j=j+1) // instantiate cells in each column
 	        begin : inner
 		    pe PE_INST (
 		                .clk(clk),
@@ -63,7 +61,6 @@ module pe_array ( input                       clk, reset,
 		      	        .status_out(status_a[(i)][(j)]),
 		      	        .state_in(state_in),
 		                .state_out(state_out_a[(i-1)][(j-1)]),
-		                .state_out_prev(state_out_a_prev[(i-1)][(j-1)]),
 		      	        .active(active_a[(i-1)][(j-1)]),
 		      	        .w_i(status_a[i-1][j]),
 		      	        .n_i(status_a[i][j-1]),
@@ -87,7 +84,7 @@ module pe_array ( input                       clk, reset,
     endgenerate
 
     generate
-        for (j=1; j<`N_PY+1; j=j+1) begin
+        for (j=1; j<`N_PY+2; j=j+1) begin
 	       assign status_a[0][j] = 1'b0;   // left edge
 	       assign status_a[`N_PX+1][j] = 1'b0;  // right edge
         end
@@ -100,11 +97,10 @@ module pe_array ( input                       clk, reset,
 	       integer i, j;
 	       active = 0;
 	       state_out = 0;
-	       for (i=0; i<`N_PX; i=i+1) begin
-	           for (j=0; j<`N_PY; j=j+1) begin
+	       for (i=0; i<`N_PX-1; i=i+1) begin
+	           for (j=0; j<`N_PY-1; j=j+1) begin
 	               active = active | active_a[i][j];
 	               state_out = state_out | state_out_a[i][j];
-	               state_out_prev = state_out_prev | state_out_a_prev[i][j];
 	           end
 	       end
         end

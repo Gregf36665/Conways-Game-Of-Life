@@ -42,12 +42,12 @@ module life_cell(input clk,
 
     always @(posedge clk) begin 
 		if (write) begin
-				alive <= val;
-                alive_prev <= val;
+			alive <= val;
+                	alive_prev <= val;
 				end
 		else if (reset) begin
-				alive <= 0;
-                alive_prev <= 0;
+			alive <= 0;
+                	alive_prev <= 0;
 				end
 			
 		else begin

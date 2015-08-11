@@ -15,14 +15,14 @@
 	)
 	(
 		// Users to add ports here
-		input wire [C_S_AXI_DATA_WIDTH-1:0] slv_reg0,
+		input wire [C_S_AXI_DATA_WIDTH-1:0] slv_reg0, // read only
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg1,
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg2,
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg3,
-		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg4,
-		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg5,
+		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg4, 
+		input wire [C_S_AXI_DATA_WIDTH-1:0] slv_reg5, // read only
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg6,
-		input wire [C_S_AXI_DATA_WIDTH-1:0] slv_reg7,
+		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg7,
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg8,
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg9,
 		output reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg10,
@@ -244,10 +244,10 @@
 	      slv_reg1 <= 0;
 	      slv_reg2 <= 0;
 	      slv_reg3 <= 0;
-	      slv_reg4 <= 0;
-	      slv_reg5 <= 0;
-	      slv_reg6 <= 0;
-	      //slv_reg7 <= 0; // read only
+	      slv_reg4 <= 0; 
+	      //slv_reg5 <= 0; // read only
+ 	      slv_reg6 <= 0;
+	      slv_reg7 <= 0; 
 	      slv_reg8 <= 0;
 	      slv_reg9 <= 0;
 	      slv_reg10 <= 0;
@@ -310,14 +310,14 @@
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 4
-	                slv_reg4[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+	                slv_reg4[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8]; 
 	              end  
 	          5'h05:
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 5
-	                slv_reg5[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+	                //slv_reg5[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8]; //read only
 	              end  
 	          5'h06:
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
@@ -331,7 +331,7 @@
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 7
-	                //slv_reg7[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8]; // read only
+	                slv_reg7[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
 	              end  
 	          5'h08:
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
@@ -506,10 +506,10 @@
 	                      slv_reg1 <= slv_reg1;
 	                      slv_reg2 <= slv_reg2;
 	                      slv_reg3 <= slv_reg3;
-	                      slv_reg4 <= slv_reg4;
-	                      slv_reg5 <= slv_reg5;
+	                      slv_reg4 <= slv_reg4; 
+	                      //slv_reg5 <= slv_reg5; // read only
 	                      slv_reg6 <= slv_reg6;
-	                      //slv_reg7 <= slv_reg7; //read only
+	                      slv_reg7 <= slv_reg7;
 	                      slv_reg8 <= slv_reg8;
 	                      slv_reg9 <= slv_reg9;
 	                      slv_reg10 <= slv_reg10;

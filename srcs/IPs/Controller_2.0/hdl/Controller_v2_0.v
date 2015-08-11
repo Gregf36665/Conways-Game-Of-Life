@@ -1,4 +1,5 @@
-
+`include "../src/pe_decs.sv"
+`include "../src/pe_array_decs.sv"
 `timescale 1 ns / 1 ps
 
 	module Controller_v2_0 #
@@ -15,7 +16,10 @@
 	)
 	(
 		// Users to add ports here
-
+		input clk,
+		output Hsync, Vsync,
+		output [3:0] red, green, blue,
+				
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -43,17 +47,24 @@
 		output wire  s00_axi_rvalid,
 		input wire  s00_axi_rready
 	);
+	
+	// internal wires
+	wire [`N_PX_BITS-1:0] adr_x;
+	wire [`N_PY_BITS-1:0] adr_y;
+	wire [`N_STATE_BITS-1:0] vali,valo;
+	wire [`PE_CMD_BITS-1:0] opcode;
+	
 // Instantiation of Axi Bus Interface S00_AXI
 	Controller_v2_0_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) Controller_v2_0_S00_AXI_inst (
-	    .slv_reg0(),
-	    .slv_reg1(),
-	    .slv_reg2(),
-	    .slv_reg3(),
-	    .slv_reg4(),
-	    .slv_reg5(),
+	    .slv_reg0({31'b0,clk}),
+	    .slv_reg1(opcode),
+	    .slv_reg2(adr_x),
+	    .slv_reg3(adr_y),
+	    .slv_reg4(vali),
+	    .slv_reg5(valo),
 	    .slv_reg6(),
 	    .slv_reg7(),
 	    .slv_reg8(),
@@ -91,7 +102,17 @@
 	// Add user logic here
 	
 	Top U_TOP (
-	   
+	       .clk(clk),
+	       .adr_x(adr_x),
+	       .adr_y(adr_y),
+	       .opcode(opcode),
+	       .vali(vali),
+	       .valo(valo),
+	       .red(red),
+	       .green(green),
+	       .blue(blue),
+	       .Hsync(Hsync),
+	       .Vsync(Vsync)	   
 	   );
 
 	// User logic ends

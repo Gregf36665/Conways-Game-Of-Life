@@ -53,6 +53,7 @@
 	wire [`N_PY_BITS-1:0] adr_y;
 	wire [`N_STATE_BITS-1:0] vali,valo;
 	wire [`PE_CMD_BITS-1:0] opcode;
+	wire [31:0] delay;
 	
 // Instantiation of Axi Bus Interface S00_AXI
 	Controller_v2_0_S00_AXI # ( 
@@ -66,7 +67,7 @@
 	    .slv_reg4(vali),
 	    .slv_reg5(valo),
 	    .slv_reg6(written),
-	    .slv_reg7(),
+	    .slv_reg7(delay),
 	    .slv_reg8(),
 	    .slv_reg9(),
 	    .slv_reg10(),
@@ -113,7 +114,8 @@
 	       .blue(blue),
 	       .Hsync(Hsync),
 	       .Vsync(Vsync),
-	       .written(written)   
+	       .written(written),
+	       .delay(delay)   
 	   );
 
 	// User logic ends

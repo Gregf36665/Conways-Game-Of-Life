@@ -22,15 +22,15 @@
 
 module Timer(
     input clk,
+    input [31:0] delay,
     output reg trigger
     );
     
-    parameter COUNT_MAX = 1000;
     reg [31:0] count;
     
     always @(posedge clk) begin
         count <= count + 1;
-        if (count == COUNT_MAX) begin
+        if (count == delay) begin
             trigger <= 1;
             count <= 0;
         end

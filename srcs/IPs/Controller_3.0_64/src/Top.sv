@@ -24,6 +24,7 @@
 
 module Top(
     input clk,
+    input [31:0] delay,
     input [`N_PX_BITS-1:0] adr_x,
     input [`N_PY_BITS-1:0] adr_y,
     input [`PE_CMD_BITS-1:0] opcode,
@@ -45,7 +46,7 @@ module Top(
     wire [`PE_STATE_BITS-1:0] vga_out;
         
     // Trigger for delayed signal
-    Timer #(.COUNT_MAX(100000000)) timer (.clk(clk),.trigger(trigger));
+    Timer timer (.clk(clk),.delay(delay),.trigger(trigger));
          
         
     

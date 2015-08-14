@@ -10,6 +10,7 @@
 #define VALI CONTROLLER_S00_AXI_SLV_REG4_OFFSET
 #define VALO CONTROLLER_S00_AXI_SLV_REG5_OFFSET
 #define WRITTEN CONTROLLER_S00_AXI_SLV_REG6_OFFSET
+#define DELAY_TIME CONTROLLER_S00_AXI_SLV_REG7_OFFSET
 
 void write(u32 x, u32 y, u32 vali);
 void delay();
@@ -20,11 +21,15 @@ void setup()
 {
 
 
+	/*
 	glider(0,0);
 	glider(10,0);
 	glider(0,10);
 	glider(10,10);
+	*/
 
+	gun();
+	eater(55,41);
 
 
 	/*int i,j;
@@ -38,6 +43,7 @@ void setup()
 int main(void)
 {
 	CONTROLLER_mWriteReg(SW_BASE,OP_CODE,4); // reset
+	CONTROLLER_mWriteReg(SW_BASE,DELAY_TIME,50000000);
 	delay();
 
 	setup();
@@ -132,10 +138,10 @@ void gun()
 
 	// j
 	write(25,1,1);
-	write(25,1,1);
+	write(25,2,1);
 
 	// k
-	write(26,6,1);
+	write(25,6,1);
 	write(25,7,1);
 
 	// l
@@ -144,4 +150,15 @@ void gun()
 	write(36,3,1);
 	write(36,4,1);
 
+}
+
+void eater(u32 xpos, u32 ypos)
+{
+	write(xpos,ypos,1);
+	write(xpos+1,ypos,1);
+	write(xpos,ypos+1,1);
+	write(xpos+2,ypos+1,1);
+	write(xpos+2,ypos+2,1);
+	write(xpos+2,ypos+3,1);
+	write(xpos+3,ypos+3,1);
 }
